@@ -713,32 +713,40 @@ function doCalc(){
   res.classList.add('on');
 }
 
-// GOOGLE SHEETS SYNC
+// GOOGLE SHEETS SYNC (განახლებული მძიმეების მხარდაჭერით)
 async function updateContent() {
-  // !!! ჩასვი შენი CSV ბმული აქ !!!
-  const csvUrl = 'აქ_ჩასვი_შენი_გამოქვეყნებული_CSV_ბმული'; 
+  const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmNsvD81ii-40OQgd-s2YthNCO3Yx0BoFPcjtmUIsVnLX2w5ONXNmrioYCx42tMeHuuTQArqQ3Hoz1/pub?gid=995882120&single=true&output=csv'; 
   
   try {
     const response = await fetch(csvUrl);
     const data = await response.text();
-    const rows = data.split('\n').slice(1);
+    
+    // CSV-ის სწორი დაყოფა (ითვალისწინებს მძიმეებს ბრჭყალებში)
+    const rows = data.split(/\r?\n/).slice(1);
 
     rows.forEach(row => {
+      // ეს რთული Regex პოულობს ID-ს და Content-ს მაშინაც კი, თუ ტექსტში მძიმეებია
       const match = row.match(/(".*?"|[^,]+)(?=\s*,|\s*$)/g);
+      
       if (match && match.length >= 2) {
         const id = match[0].replace(/^"|"$/g, '').trim();
         const content = match[1].replace(/^"|"$/g, '').trim();
+        
         const el = document.getElementById(id);
         if (el) {
+          // \n სიმბოლოს შეცვლა რეალური ხაზის გადატანით
           el.innerHTML = content.replace(/\\n/g, '<br>');
         }
       }
     });
-  } catch (err) { console.error("Sync Error:", err); }
+  } catch (err) { 
+    console.error("Sync Error:", err); 
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
   updateContent();
+  
   // FADE IN OBSERVER
   document.querySelectorAll('.fi').forEach(el=>{
     new IntersectionObserver(entries=>{
