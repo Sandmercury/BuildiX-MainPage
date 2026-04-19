@@ -70,6 +70,7 @@ nav{
 /* ── LAYOUT ── */
 section{padding:96px 40px;}
 .wrap{max-width:1140px;margin:0 auto;}
+
 .sec-eye{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
 .sec-bar{width:3px;height:22px;background:var(--gold);border-radius:2px;flex-shrink:0;}
 .sec-lbl{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:3px;text-transform:uppercase;}
@@ -176,6 +177,10 @@ section{padding:96px 40px;}
 .calc-res.on{display:block;}
 .r-amt{font-family:'Playfair Display',serif;font-size:44px;color:var(--text);line-height:1;}
 .r-cur{font-size:24px;color:var(--gold);margin-right:4px;}
+.r-bkdn{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:16px;}
+.r-bi{background:#080808;border:1px solid #1A1A1A;border-radius:9px;padding:11px 13px;}
+.r-bi-lbl{font-size:9px;color:#444;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
+.r-bi-val{font-size:14px;font-weight:600;color:#C0BDB6;}
 
 /* ── FAQ ── */
 .faq-wrap{max-width:700px;margin:0 auto;}
@@ -186,14 +191,25 @@ section{padding:96px 40px;}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:13px;color:var(--muted);line-height:1.75;}
 .faq-item.on .faq-a{max-height:300px;padding-bottom:18px;}
 
+/* ── PARTNERS ── */
+#partners{background:var(--card);}
+.part-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;}
+.part-logo{padding:12px 22px;background:var(--bg);border:1px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted2);letter-spacing:1.5px;transition:border-color .2s,color .2s;}
+.trust-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.tbadge{display:flex;align-items:center;gap:10px;padding:13px 18px;background:var(--bg);border:1px solid var(--border);border-radius:12px;}
+.tbadge-icon{font-size:18px;}
+.tbadge-txt{font-size:12px;color:var(--muted);line-height:1.5;}
+.tbadge-txt strong{color:var(--text);font-weight:600;display:block;font-size:12px;}
+
 /* ── FADE IN ── */
 .fi{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
 .fi.on{opacity:1;transform:translateY(0);}
 
 @media(max-width:768px){
   section{padding:72px 20px;}
+  .nav-links{display:none;}
   .stats-grid{grid-template-columns:1fr 1fr;}
-  .svc-grid,.testi-grid,.calc-g{grid-template-columns:1fr;}
+  .svc-grid,.testi-grid,.port-grid,.calc-g{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -244,11 +260,13 @@ section{padding:96px 40px;}
     <h2 class="sec-h2 fi" id="svc_h2">რას ვაშენებთ</h2>
     <div class="svc-grid">
       <div class="svc-card fi">
+        <div class="svc-icon">🏠</div>
         <div class="svc-title" id="svc_1_title">კერძო სახლი</div>
         <div class="svc-desc" id="svc_1_desc">გეგმიდან გასაღებამდე, 80–500 კვ.მ. ყველა სტილი და მასალა.</div>
         <div class="svc-price" id="svc_1_price">საწყისი $45,000-დან</div>
       </div>
       <div class="svc-card fi">
+        <div class="svc-icon">🏢</div>
         <div class="svc-title" id="svc_2_title">კომერციული</div>
         <div class="svc-desc" id="svc_2_desc">ოფისი, სავაჭრო სივრცე, სასტუმრო. ინდივიდუალური პროექტი.</div>
         <div class="svc-price" id="svc_2_price">საწყისი $80,000-დან</div>
@@ -264,11 +282,12 @@ section{padding:96px 40px;}
     <div class="filters fi">
       <button class="fbtn active" data-f="all"><span id="filter_all">ყველა</span></button>
       <button class="fbtn" data-f="house"><span id="filter_house">კერძო სახლი</span></button>
+      <button class="fbtn" data-f="comm"><span id="filter_comm">კომერციული</span></button>
       <button class="fbtn" data-f="ren"><span id="filter_ren">რემონტი</span></button>
     </div>
     <div class="port-grid">
       <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო</div><div class="proj-info"><div class="proj-name" id="port_name_1">ვილა ვაშლიჯვარში</div><div class="proj-specs" id="port_specs_1">240 კვ.მ · 14 თვე · 2024</div></div></div>
-      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო</div><div class="proj-info"><div class="proj-name" id="port_name_2">სახლი მცხეთაში</div><div class="proj-specs" id="port_specs_2">180 კვ.მ · 11 თვე · 2023</div></div></div>
+      <div class="proj fi" data-cat="comm"><div class="proj-img">ფოტო</div><div class="proj-info"><div class="proj-name" id="port_name_2">ოფისი გლდანში</div><div class="proj-specs" id="port_specs_2">580 კვ.მ · 8 თვე · 2024</div></div></div>
     </div>
   </div>
 </section>
@@ -278,10 +297,12 @@ section{padding:96px 40px;}
     <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="proc_lbl">პროცესი</span></div>
     <h2 class="sec-h2 fi" id="proc_h2">როგორ ვმუშაობთ</h2>
     <div class="proc-grid fi">
-      <div class="step"><div class="step-n">01</div><div><div class="step-title" id="step_1_title">უფასო კონსულტაცია</div><div class="step-desc" id="step_1_desc">ადგილზე ან ზუმზე, 60 წუთი.</div><span class="step-badge" id="step_1_badge">0₾ · 1–2 სამ. დღე</span></div></div>
-      <div class="step"><div class="step-n">02</div><div><div class="step-title" id="step_2_title">პროექტი და სმეტა</div><div class="step-desc" id="step_2_desc">არქ. გეგმა, ფასების ჩაშლა.</div><span class="step-badge" id="step_2_badge">2–4 კვირა</span></div></div>
+      <div class="step"><div class="step-n">01</div><div><div class="step-title" id="step_1_title">უფასო კონსულტაცია</div><div class="step-desc" id="step_1_desc">ადგილზე ან ზუმზე, 60 წუთი. პირველადი შეფასება.</div><span class="step-badge" id="step_1_badge">0₾ · 1–2 სამ. დღე</span></div></div>
+      <div class="step"><div class="step-n">02</div><div><div class="step-title" id="step_2_title">პროექტი და სმეტა</div><div class="step-desc" id="step_2_desc">არქ. გეგმა, ფასების ჩაშლა, ვადების გრაფიკი.</div><span class="step-badge" id="step_2_badge">2–4 კვირა</span></div></div>
+      <div class="step"><div class="step-n">03</div><div><div class="step-title" id="step_3_title">მშენებლობა</div><div class="step-desc" id="step_3_desc">ყოველკვირეული ფოტო-ანგარიში Telegram-ში.</div><span class="step-badge" id="step_3_badge">ხელშეკრ. მიხ.</span></div></div>
+      <div class="step"><div class="step-n">04</div><div><div class="step-title" id="step_4_title">ჩაბარება + გარანტია</div><div class="step-desc" id="step_4_desc">ტექ. ჩაბარება, სრული დოკ-ცია, 5წ გარანტიის ბარათი.</div><span class="step-badge" id="step_4_badge">5 წლიანი გარ.</span></div></div>
     </div>
-    <div class="proc-callout fi"><span id="proc_callout_txt">ყოველ კვირა Telegram-ში გიგზავნით ფოტო-ანგარიშს</span></div>
+    <div class="proc-callout fi"><span>📱</span><span id="proc_callout_txt">ყოველ კვირა Telegram-ში გიგზავნით ფოტო-ანგარიშს — სამშენებლო პროგრესი თქვენს ხელის გულზე</span></div>
   </div>
 </section>
 
@@ -290,7 +311,7 @@ section{padding:96px 40px;}
     <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="testi_lbl">შეფასებები</span></div>
     <h2 class="sec-h2 fi" id="testi_h2">კლიენტები ამბობენ</h2>
     <div class="testi-grid">
-      <div class="tc fi"><div class="tc-head"><div class="tc-av">მკ</div><div><div class="tc-name" id="testi_name_1">მარიამ კ.</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q" id="testi_q_1">"BuildiX-მა ზუსტად ვადაში ჩააბარა."</p></div>
+      <div class="tc fi"><div class="tc-head"><div class="tc-av">მკ</div><div><div class="tc-name" id="testi_name_1">მარიამ კ.</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q" id="testi_q_1">"BuildiX-მა ზუსტად ვადაში ჩააბარა. ყოველ კვირა გვიგზავნიდა ფოტოებს — ნამდვილი პროფესიონალები."</p></div>
     </div>
   </div>
 </section>
@@ -298,14 +319,20 @@ section{padding:96px 40px;}
 <section id="calculator">
   <div class="wrap">
     <div class="calc-card fi">
-      <div class="calc-title" id="calc_title">ბიუჯეტის კალკულატორი</div>
+      <div class="calc-title" id="calc_title">სავარაუდო ბიუჯეტის კალკულატორი</div>
       <div class="calc-sub" id="calc_sub">შეიყვანეთ პარამეტრები — შედეგი მყისიერია</div>
       <div class="calc-g">
-        <div class="cf"><label id="calc_label_area">ფართობი (კვ.მ)</label><input type="number" id="cA" placeholder="150" oninput="doCalc()"></div>
+        <div class="cf"><label id="calc_label_area">ფართობი (კვ.მ)</label><input type="number" id="cA" placeholder="მაგ: 150" oninput="doCalc()"></div>
         <div class="cf"><label id="calc_label_floors">სართულები</label><select id="cF" onchange="doCalc()"><option value="1">1</option><option value="2">2</option></select></div>
+        <div class="cf"><label id="calc_label_roof">სახურავი</label><select id="cR" onchange="doCalc()"><option value="tin">თუნუქი</option><option value="flat">ბრტყელი</option></select></div>
+        <div class="cf"><label id="calc_label_wall">კედელი</label><select id="cW" onchange="doCalc()"><option value="block">ბლოკი</option><option value="aguri">აგური</option></select></div>
       </div>
       <div class="calc-res" id="cr">
         <div class="r-amt"><span class="r-cur">$</span><span id="rT">0</span></div>
+        <div class="r-bkdn">
+          <div class="r-bi"><div class="r-bi-lbl">კონსტრუქცია</div><div class="r-bi-val" id="rCC">—</div></div>
+          <div class="r-bi"><div class="r-bi-lbl">გადახურვა</div><div class="r-bi-val" id="rCR">—</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -315,26 +342,44 @@ section{padding:96px 40px;}
   <div class="wrap">
     <h2 class="sec-h2 fi" id="faq_h2">ხშირად დასმული კითხვები</h2>
     <div class="faq-wrap fi">
-      <div class="faq-item on"><button class="faq-q" onclick="faq(this)"><span id="faq_q1">გადახდის გრაფიკი?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a1">სტანდარტული სქემა: 30/40/30.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span id="faq_q2">მშენებლობის ხანგრძლივობა?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a2">80–150 კვ.მ სახლი — 8–12 თვე.</div></div>
+      <div class="faq-item on"><button class="faq-q" onclick="faq(this)"><span id="faq_q1">როგორია გადახდის გრაფიკი?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a1">სტანდარტული სქემა: 30/40/30.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span id="faq_q2">რამდენ ხანს გრძელდება მშენებლობა?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a2">8–12 თვე საშუალოდ.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap">
+    <h2 class="sec-h2 fi" id="part_h2">ვენდობით საუკეთესოს</h2>
+    <div class="part-row fi">
+      <div class="part-logo">KNAUF</div><div class="part-logo">HILTI</div><div class="part-logo">MAPEI</div>
+    </div>
+    <div class="trust-row fi">
+      <div class="tbadge"><span class="tbadge-icon">🏛</span><div class="tbadge-txt"><strong id="license_txt">სამინისტროს ლიცენზია</strong>№XXXXXX</div></div>
     </div>
   </div>
 </section>
 
 <script>
-// --- UI ფუნქციები ---
-function toggleNav(){document.getElementById('nm')?.classList.toggle('on');}
+// --- UI FUNCTIONALITY ---
 function faq(btn){const item=btn.closest('.faq-item'); const was=item.classList.contains('on'); document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('on')); if(!was) item.classList.add('on');}
+
 function doCalc(){
   const area=parseFloat(document.getElementById('cA').value);
   const res=document.getElementById('cr');
   if(!area||area<=0){res.classList.remove('on');return;}
-  let pc=280; if(document.getElementById('cF').value==='2') pc=320;
-  document.getElementById('rT').textContent=Math.round(area*pc).toLocaleString();
+  let pc=280, pr=85;
+  if(document.getElementById('cF').value==='2') pc=320;
+  if(document.getElementById('cR').value==='flat') pr=140;
+  if(document.getElementById('cW').value==='aguri') pc+=40;
+  const cc=area*pc, cr=area*pr;
+  document.getElementById('rT').textContent=Math.round(cc+cr).toLocaleString();
+  document.getElementById('rCC').textContent='$'+Math.round(cc).toLocaleString();
+  document.getElementById('rCR').textContent='$'+Math.round(cr).toLocaleString();
   res.classList.add('on');
 }
 
-// --- Google Sheets Sync ---
+// --- GOOGLE SHEETS SYNC ---
 async function updateContent() {
   const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmNsvD81ii-40OQgd-s2YthNCO3Yx0BoFPcjtmUIsVnLX2w5ONXNmrioYCx42tMeHuuTQArqQ3Hoz1/pub?gid=995882120&single=true&output=csv&t=' + new Date().getTime(); 
   
@@ -364,19 +409,19 @@ async function updateContent() {
 window.addEventListener('DOMContentLoaded', async () => {
   await updateContent();
   
-  // ფილტრების ლოგიკა
+  // Portfolio Filters
   document.querySelectorAll('.fbtn').forEach(b => {
-    b.addEventListener('click', () => {
+    b.onclick = () => {
       document.querySelectorAll('.fbtn').forEach(x => x.classList.remove('active'));
       b.classList.add('active');
       const f = b.getAttribute('data-f');
       document.querySelectorAll('.proj').forEach(p => {
         p.classList.toggle('hidden', f !== 'all' && p.getAttribute('data-cat') !== f);
       });
-    });
+    };
   });
 
-  // Fade-in
+  // Fade-in Observer
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
   }, { threshold: 0.1 });
