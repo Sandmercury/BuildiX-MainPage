@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: Sandmercury/BuildiX-MainPage # მაგალითად: sandmercury/buildix-v3
+  branch: main
+
+media_folder: "images" # აქ შეინახება ატვირთული ფოტოები
+public_folder: "/images"
+
+collections:
+  - name: "content"
+    label: "საიტის კონტენტი"
+    files:
+      - file: "content.json"
+        label: "მთავარი გვერდი"
+        name: "home"
+        fields:
+          - {label: "მთავარი სათაური", name: "hero_title", widget: "string"}
+          - {label: "ქვესათაური", name: "hero_sub", widget: "string"}
+          - {label: "გამოცდილება (წლები)", name: "stats_years", widget: "string"}
+          - {label: "პროექტების რაოდენობა", name: "stats_projects", widget: "string"}
+          - {label: "გარანტია (წლები)", name: "stats_warranty", widget: "string"}
