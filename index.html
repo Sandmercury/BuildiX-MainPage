@@ -82,10 +82,7 @@ section{padding:96px 40px;}
   position:relative;display:flex;align-items:center;justify-content:center;
   text-align:center;overflow:hidden;
 }
-.hero-bg{
-  position:absolute;inset:0;
-  background:#0D0D0B;
-}
+.hero-bg{position:absolute;inset:0;background:#0D0D0B;}
 .hero-bg::after{
   content:'';position:absolute;inset:0;
   background-image:
@@ -94,45 +91,21 @@ section{padding:96px 40px;}
   background-size:64px 64px;
 }
 .hero-glow{
-  position:absolute;
-  width:600px;height:600px;
+  position:absolute;width:600px;height:600px;
   background:radial-gradient(circle,rgba(200,169,110,0.06) 0%,transparent 70%);
   top:50%;left:50%;transform:translate(-50%,-50%);
   pointer-events:none;
 }
 .hero-content{position:relative;z-index:1;max-width:780px;padding:0 24px;}
 .hero-eye{font-size:11px;font-weight:600;color:var(--gold);letter-spacing:4px;text-transform:uppercase;margin-bottom:22px;}
-.hero-h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(36px,6vw,66px);font-weight:600;
-  line-height:1.1;margin-bottom:20px;color:var(--text);
-}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,66px);font-weight:600;line-height:1.1;margin-bottom:20px;color:var(--text);}
 .hero-sub{font-size:17px;color:rgba(240,237,231,0.55);margin-bottom:38px;}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 
-.btn-primary{
-  padding:13px 28px;
-  background:var(--text);color:#0A0A0A;
-  border:1.5px solid var(--gold);border-radius:10px;
-  font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  cursor:pointer;transition:all .2s;font-family:inherit;display:inline-block;
-}
-.btn-primary:hover{background:var(--gold);border-color:var(--gold);box-shadow:0 6px 24px var(--gold-glow);}
-.btn-outline{
-  padding:13px 28px;background:transparent;color:var(--text);
-  border:1.5px solid rgba(240,237,231,0.2);border-radius:10px;
-  font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  cursor:pointer;transition:all .2s;font-family:inherit;display:inline-block;
-}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.btn-primary{padding:13px 28px;background:var(--text);color:#0A0A0A;border:1.5px solid var(--gold);border-radius:10px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;display:inline-block;}
+.btn-outline{padding:13px 28px;background:transparent;color:var(--text);border:1.5px solid rgba(240,237,231,0.2);border-radius:10px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;display:inline-block;}
 
-.hero-proof{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:14px 40px;
-  background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);
-  border-top:1px solid rgba(200,169,110,0.12);
-  display:flex;justify-content:center;gap:36px;flex-wrap:wrap;z-index:1;
-}
+.hero-proof{position:absolute;bottom:0;left:0;right:0;padding:14px 40px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);border-top:1px solid rgba(200,169,110,0.12);display:flex;justify-content:center;gap:36px;flex-wrap:wrap;z-index:1;}
 .hero-proof-item{font-size:12px;color:rgba(240,237,231,0.5);}
 .hero-proof-item b{color:var(--gold);font-weight:600;}
 
@@ -147,334 +120,58 @@ section{padding:96px 40px;}
 
 /* ── SERVICES ── */
 .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.svc-card{
-  background:var(--card);border:1px solid var(--border);border-radius:20px;
-  padding:26px;transition:border-color .2s,transform .2s;
-}
+.svc-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;transition:border-color .2s,transform .2s;}
 .svc-card:hover{border-color:var(--gold);transform:translateY(-2px);}
 .svc-icon{font-size:22px;margin-bottom:16px;}
 .svc-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:7px;}
 .svc-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px;}
-.svc-price{
-  display:inline-block;padding:4px 12px;
-  background:var(--gold-dim);color:var(--gold);
-  border-radius:100px;font-size:11px;font-weight:600;margin-bottom:14px;
-}
+.svc-price{display:inline-block;padding:4px 12px;background:var(--gold-dim);color:var(--gold);border-radius:100px;font-size:11px;font-weight:600;margin-bottom:14px;}
 .svc-lnk{font-size:13px;color:var(--gold);font-weight:500;}
-.svc-lnk:hover{opacity:.7;}
 
 /* ── PORTFOLIO ── */
 #portfolio{background:var(--card);}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
-.fbtn{
-  padding:7px 18px;background:transparent;
-  border:1px solid var(--border);border-radius:100px;
-  font-size:12px;font-weight:600;color:var(--muted);
-  cursor:pointer;transition:all .2s;font-family:inherit;
-}
+.fbtn{padding:7px 18px;background:transparent;border:1px solid var(--border);border-radius:100px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;}
 .fbtn:hover,.fbtn.active{background:var(--text);border-color:var(--text);color:#0A0A0A;}
 .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px;}
-.proj{
-  background:var(--bg);border:1px solid var(--border);border-radius:16px;
-  overflow:hidden;transition:border-color .2s,transform .2s;
-}
+.proj{background:var(--bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s;}
 .proj:hover{border-color:var(--gold);transform:translateY(-2px);}
 .proj.hidden{display:none;}
-.proj-img{
-  width:100%;aspect-ratio:4/3;
-  background:#181816;
-  display:flex;align-items:center;justify-content:center;
-  font-size:10px;color:#2E2E2C;text-align:center;padding:16px;
-  letter-spacing:.5px;text-transform:uppercase;
-}
+.proj-img{width:100%;aspect-ratio:4/3;background:#181816;display:flex;align-items:center;justify-content:center;font-size:10px;color:#2E2E2C;text-align:center;padding:16px;letter-spacing:.5px;text-transform:uppercase;}
 .proj-info{padding:14px 16px;}
-.proj-tag{
-  display:inline-block;padding:3px 10px;
-  background:var(--card);border:1px solid var(--border);
-  border-radius:100px;font-size:10px;color:var(--muted2);
-  margin-bottom:7px;font-weight:600;letter-spacing:.5px;
-}
+.proj-tag{display:inline-block;padding:3px 10px;background:var(--card);border:1px solid var(--border);border-radius:100px;font-size:10px;color:var(--muted2);margin-bottom:7px;font-weight:600;letter-spacing:.5px;}
 .proj-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;}
 .proj-specs{font-size:12px;color:var(--muted2);}
-.center{display:flex;justify-content:center;}
-.btn-sm{
-  padding:11px 26px;background:transparent;color:var(--text);
-  border:1px solid var(--border);border-radius:10px;
-  font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  cursor:pointer;transition:all .2s;font-family:inherit;
-}
-.btn-sm:hover{border-color:var(--gold);color:var(--gold);}
-
-/* ── PROCESS ── */
-.proc-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:0;position:relative;margin-bottom:32px;
-}
-.proc-grid::before{
-  content:'';position:absolute;top:21px;
-  left:calc(12.5% + 14px);right:calc(12.5% + 14px);
-  height:1px;border-top:1px dashed rgba(200,169,110,0.3);z-index:0;
-}
-.step{padding:0 18px;text-align:center;position:relative;z-index:1;}
-.step-n{
-  width:42px;height:42px;
-  background:var(--bg);border:1.5px solid var(--gold);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;font-size:15px;color:var(--gold);
-  margin:0 auto 16px;
-}
-.step-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:7px;}
-.step-desc{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:10px;}
-.step-badge{
-  display:inline-block;padding:4px 11px;
-  background:var(--gold-dim);color:var(--gold);
-  border-radius:100px;font-size:10px;font-weight:600;
-}
-.proc-callout{
-  display:flex;gap:14px;
-  padding:16px 20px;
-  background:var(--gold-dim);border-left:3px solid var(--gold);
-  border-radius:0 12px 12px 0;
-  font-size:13px;color:var(--muted);line-height:1.65;
-  max-width:680px;
-}
-
-/* ── TESTIMONIALS ── */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;}
-.tc{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;}
-.tc-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-.tc-av{
-  width:44px;height:44px;
-  background:linear-gradient(135deg,var(--gold),#8B6B35);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:700;color:#111;flex-shrink:0;
-}
-.tc-name{font-size:14px;font-weight:600;color:var(--text);}
-.tc-proj{font-size:11px;color:var(--muted);}
-.tc-stars{font-size:12px;color:var(--gold);margin-top:2px;}
-.tc-q{font-size:13px;color:rgba(240,237,231,0.65);line-height:1.75;font-style:italic;margin-bottom:14px;}
-.tc-lnk{font-size:11px;color:var(--gold);font-weight:600;}
-
-.g-widget{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:16px 22px;display:flex;align-items:center;justify-content:center;
-  gap:18px;flex-wrap:wrap;max-width:460px;margin:0 auto;
-}
-.g-logo{font-size:17px;font-weight:700;}
-.g-logo span:nth-child(1){color:#4285F4;}
-.g-logo span:nth-child(2){color:#EA4335;}
-.g-logo span:nth-child(3){color:#FBBC05;}
-.g-logo span:nth-child(4){color:#4285F4;}
-.g-logo span:nth-child(5){color:#34A853;}
-.g-logo span:nth-child(6){color:#EA4335;}
-.g-rat{font-size:14px;font-weight:600;color:var(--text);}
-.g-rat .s{color:var(--gold);margin-right:5px;}
-.g-cnt{font-size:12px;color:var(--muted);}
-.g-lnk{font-size:12px;color:var(--gold);font-weight:600;}
-
-/* ── PARTNERS ── */
-#partners{background:var(--card);}
-.part-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;}
-.part-logo{
-  padding:12px 22px;background:var(--bg);border:1px solid var(--border);
-  border-radius:10px;font-size:13px;font-weight:700;color:var(--muted2);
-  letter-spacing:1.5px;transition:border-color .2s,color .2s;
-}
-.part-logo:hover{border-color:var(--gold);color:var(--muted);}
-.trust-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.tbadge{
-  display:flex;align-items:center;gap:10px;
-  padding:13px 18px;background:var(--bg);border:1px solid var(--border);border-radius:12px;
-}
-.tbadge-icon{font-size:18px;}
-.tbadge-txt{font-size:12px;color:var(--muted);line-height:1.5;}
-.tbadge-txt strong{color:var(--text);font-weight:600;display:block;font-size:12px;}
-
-/* ── CALCULATOR ── */
-.calc-card{
-  max-width:720px;margin:0 auto;
-  background:var(--card);border:1px solid var(--border);
-  border-left:3px solid var(--gold);border-radius:20px;
-  padding:34px;box-shadow:0 8px 48px rgba(0,0,0,0.4);
-}
-.calc-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--text);margin-bottom:5px;}
-.calc-sub{font-size:13px;color:var(--muted);margin-bottom:26px;}
-.calc-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
-.cf{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
-.cf label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;}
-.cf input,.cf select{
-  height:44px;background:#0F0F0F;border:1.5px solid #2E2E2E;
-  border-radius:10px;padding:0 14px;font-size:14px;color:var(--text);
-  font-family:inherit;outline:none;-webkit-appearance:none;appearance:none;
-  transition:border-color .2s,box-shadow .2s;
-}
-.cf input::placeholder{color:#333;}
-.cf input:focus,.cf select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,169,110,0.12);}
-.cf select{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23555' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;
-  padding-right:38px;cursor:pointer;
-}
-.cf select option{background:#1E1E1E;}
-
-.calc-res{
-  background:#0C0C0C;border:1px solid #1E1E1E;border-radius:14px;
-  padding:22px 24px;margin-bottom:14px;
-  position:relative;overflow:hidden;display:none;
-}
-.calc-res.on{display:block;}
-.calc-res::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),#6B4A1E);}
-.r-lbl{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#444;margin-bottom:7px;}
-.r-amt{font-family:'Playfair Display',serif;font-size:44px;color:var(--text);line-height:1;letter-spacing:-1px;}
-.r-cur{font-family:'DM Sans',sans-serif;font-size:24px;color:var(--gold);margin-right:4px;font-weight:300;}
-.r-bkdn{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:16px;}
-.r-bi{background:#080808;border:1px solid #1A1A1A;border-radius:9px;padding:11px 13px;}
-.r-bi-lbl{font-size:9px;color:#444;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
-.r-bi-val{font-size:14px;font-weight:600;color:#C0BDB6;}
-.calc-note{display:flex;gap:10px;padding:12px 14px;background:#111;border:1px solid #1E1E1E;border-radius:10px;font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
-.calc-cta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
-.calc-cta input[type=email]{
-  flex:1;min-width:180px;height:44px;background:#0F0F0F;
-  border:1.5px solid #2E2E2E;border-radius:10px;
-  padding:0 14px;font-size:13px;color:var(--text);font-family:inherit;outline:none;
-}
-.calc-cta input[type=email]::placeholder{color:#333;}
-.calc-cta input[type=email]:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,169,110,0.12);}
-.btn-gold{
-  padding:11px 22px;background:linear-gradient(135deg,var(--gold),#9A6F30);
-  color:#111;border:none;border-radius:10px;font-size:12px;font-weight:700;
-  letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;
-  transition:all .2s;font-family:inherit;white-space:nowrap;
-}
-.btn-gold:hover{box-shadow:0 4px 20px var(--gold-glow);transform:translateY(-1px);}
-.calc-hint{font-size:11px;color:var(--muted2);margin-top:8px;}
-.calc-full{
-  margin-top:24px;padding-top:22px;border-top:1px solid var(--border);
-  text-align:center;
-}
-.calc-full p{font-size:13px;color:var(--muted);margin-bottom:14px;}
 
 /* ── FAQ ── */
 .faq-wrap{max-width:700px;margin:0 auto;}
 .faq-item{border-bottom:1px solid var(--border);}
-.faq-q{
-  width:100%;display:flex;justify-content:space-between;align-items:center;
-  padding:18px 0;background:transparent;border:none;
-  font-family:inherit;font-size:14px;font-weight:600;color:var(--text);
-  cursor:pointer;text-align:left;gap:14px;transition:color .2s;
-}
-.faq-q:hover{color:var(--gold);}
-.faq-ico{
-  width:24px;height:24px;border:1px solid var(--border);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;color:var(--muted);
-  transition:transform .3s,border-color .2s,color .2s;flex-shrink:0;
-}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 0;background:transparent;border:none;font-family:inherit;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;text-align:left;gap:14px;}
+.faq-ico{width:24px;height:24px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:transform .3s;}
 .faq-item.on .faq-ico{transform:rotate(45deg);border-color:var(--gold);color:var(--gold);}
-.faq-a{
-  max-height:0;overflow:hidden;
-  transition:max-height .35s ease,padding .2s;
-  font-size:13px;color:var(--muted);line-height:1.75;
-}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:13px;color:var(--muted);line-height:1.75;}
 .faq-item.on .faq-a{max-height:300px;padding-bottom:18px;}
 
-/* ── CTA ── */
-#cta{background:#0D0D0B;border-top:1px solid var(--border);}
-.cta-head{text-align:center;margin-bottom:48px;}
-.cta-h2{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,44px);color:var(--text);margin-bottom:12px;}
-.cta-sub{font-size:16px;color:rgba(240,237,231,0.45);}
-.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:840px;margin:0 auto;}
-.cta-form{
-  background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;
-}
-.cta-form h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:18px;}
-.cf-note{font-size:11px;color:var(--muted2);margin-top:8px;}
-.cta-ok{
-  background:#091A0F;border:1px solid #174D28;border-radius:10px;
-  padding:13px 16px;font-size:13px;color:#4ADE80;font-weight:500;
-  display:none;margin-top:10px;
-}
-.cta-ok.on{display:block;}
-.cta-side{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;}
-.wa-btn{
-  display:flex;align-items:center;gap:10px;
-  padding:13px 22px;background:#1A3A1F;border:1px solid var(--green);
-  border-radius:12px;color:var(--green);font-size:13px;font-weight:600;
-  cursor:pointer;transition:all .2s;width:100%;justify-content:center;
-  font-family:inherit;
-}
-.wa-btn:hover{background:#223D26;box-shadow:0 4px 20px rgba(37,211,102,0.2);}
-.cta-phone{font-family:'Playfair Display',serif;font-size:28px;color:var(--text);}
-.cta-addr{font-size:12px;color:var(--muted2);line-height:1.6;}
-.cta-map{font-size:12px;color:var(--gold);font-weight:600;}
-
-/* ── FOOTER ── */
-footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0;}
-.foot-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:40px;}
-.foot-logo img{height:36px;width:auto;margin-bottom:10px;}
-.foot-tag{font-size:12px;color:var(--muted2);margin-bottom:18px;}
-.socials{display:flex;gap:10px;}
-.soc{
-  width:34px;height:34px;background:var(--card);border:1px solid var(--border);
-  border-radius:8px;display:flex;align-items:center;justify-content:center;
-  font-size:13px;transition:border-color .2s;cursor:pointer;
-}
-.soc:hover{border-color:var(--gold);}
-.foot-col h4{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
-.foot-links{list-style:none;display:flex;flex-direction:column;gap:9px;}
-.foot-links a{font-size:13px;color:var(--muted2);transition:color .2s;}
-.foot-links a:hover{color:var(--gold);}
-.foot-info{display:flex;flex-direction:column;gap:9px;}
-.foot-info-item{font-size:13px;color:var(--muted2);line-height:1.5;}
-.foot-info-item strong{color:var(--muted);display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
-.foot-bottom{
-  max-width:1140px;margin:0 auto;border-top:1px solid var(--border);
-  padding:14px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
-  font-size:11px;color:var(--muted2);
-}
-
-/* ── WA FLOAT ── */
-.wa-float{
-  position:fixed;bottom:26px;right:26px;
-  width:56px;height:56px;background:var(--green);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:26px;
-  cursor:pointer;z-index:999;
-  animation:pulse 2.5s infinite;
-  text-decoration:none;
-}
-@keyframes pulse{
-  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4);}
-  50%{box-shadow:0 4px 32px rgba(37,211,102,0.65),0 0 0 8px rgba(37,211,102,0.08);}
-}
+/* ── CALCULATOR ── */
+.calc-card{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:20px;padding:34px;box-shadow:0 8px 48px rgba(0,0,0,0.4);}
+.calc-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--text);margin-bottom:5px;}
+.calc-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+.cf{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
+.cf label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;}
+.cf input,.cf select{height:44px;background:#0F0F0F;border:1.5px solid #2E2E2E;border-radius:10px;padding:0 14px;font-size:14px;color:var(--text);font-family:inherit;outline:none;}
+.calc-res{background:#0C0C0C;border:1px solid #1E1E1E;border-radius:14px;padding:22px 24px;margin-bottom:14px;display:none;}
+.calc-res.on{display:block;}
+.r-amt{font-family:'Playfair Display',serif;font-size:44px;color:var(--text);line-height:1;}
+.r-cur{font-size:24px;color:var(--gold);margin-right:4px;}
 
 /* ── FADE IN ── */
 .fi{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
 .fi.on{opacity:1;transform:translateY(0);}
 
-/* ── RESPONSIVE ── */
 @media(max-width:768px){
   section{padding:72px 20px;}
-  nav{padding:0 20px;}
-  .nav-links,.nav-cta{display:none;}
-  .nav-burger{display:flex;}
   .stats-grid{grid-template-columns:1fr 1fr;}
-  .stat{border-right:none;border-bottom:1px solid var(--border);}
-  .stat:nth-child(odd){border-right:1px solid var(--border);}
-  .stat:nth-child(3),.stat:nth-child(4){border-bottom:none;}
-  .svc-grid,.testi-grid,.cta-grid,.foot-grid{grid-template-columns:1fr;}
-  .port-grid{grid-template-columns:1fr 1fr;}
-  .proc-grid{grid-template-columns:1fr;gap:28px;}
-  .proc-grid::before{display:none;}
-  .step{text-align:left;display:flex;gap:18px;padding:0;}
-  .step-n{margin:0;flex-shrink:0;}
-  .calc-g{grid-template-columns:1fr;}
-  .r-bkdn{grid-template-columns:1fr;}
-  .sec-h2{margin-bottom:28px;}
-}
-@media(max-width:480px){
-  .port-grid{grid-template-columns:1fr;}
-  .hero-btns{flex-direction:column;align-items:center;}
-  .hero-proof{gap:14px;}
+  .svc-grid,.port-grid,.calc-g{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -487,21 +184,10 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
   <ul class="nav-links">
     <li><a href="#portfolio">პროექტები</a></li>
     <li><a href="#services">სერვისები</a></li>
-    <li><a href="#process">პროცესი</a></li>
-    <li><a href="#about">ჩვენ შესახებ</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <a href="#cta" class="nav-cta" id="nav_cta">უფასო კონსულტაცია</a>
-  <div class="nav-burger" id="burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
-<div class="nav-mobile" id="nm">
-  <a href="#portfolio" onclick="closeNav()">პროექტები</a>
-  <a href="#services" onclick="closeNav()">სერვისები</a>
-  <a href="#process" onclick="closeNav()">პროცესი</a>
-  <a href="#calculator" onclick="closeNav()">კალკულატორი</a>
-  <a href="#faq" onclick="closeNav()">FAQ</a>
-  <a href="#cta" onclick="closeNav()">უფასო კონსულტაცია →</a>
-</div>
 
 <section id="hero">
   <div class="hero-bg"></div>
@@ -511,14 +197,9 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
     <h1 class="hero-h1" id="hero_h1">ვაშენებთ სახლებს,<br>რომელშიც 50 წელი იცხოვრებ</h1>
     <p class="hero-sub" id="hero_sub">თბილისი, მცხეთა, თეთრიწყარო — პროექტიდან გასაღებამდე</p>
     <div class="hero-btns">
-      <a href="#calculator" class="btn-primary" id="btn_calc">ფასის გამოთვლა →</a>
-      <a href="#portfolio" class="btn-outline" id="btn_port">პროექტები ნახვა</a>
+      <a href="#calculator" class="btn-primary" id="btn_calc">ფასის გამოთვლა</a>
+      <a href="#portfolio" class="btn-outline" id="btn_port">პროექტები</a>
     </div>
-  </div>
-  <div class="hero-proof">
-    <span class="hero-proof-item" id="hero_proof_1"><b>★ 4.9</b> · 87 შეფასება Google-ზე</span>
-    <span class="hero-proof-item" id="hero_proof_2"><b>200+</b> დასრულებული პროექტი</span>
-    <span class="hero-proof-item" id="hero_proof_3"><b>5 წლიანი</b> გარანტია</span>
   </div>
 </section>
 
@@ -537,32 +218,14 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
     <h2 class="sec-h2 fi" id="svc_h2">რას ვაშენებთ</h2>
     <div class="svc-grid">
       <div class="svc-card fi">
-        <div class="svc-icon">🏠</div>
         <div class="svc-title" id="svc_1_title">კერძო სახლი</div>
-        <div class="svc-desc" id="svc_1_desc">გეგმიდან გასაღებამდე, 80–500 კვ.მ. ყველა სტილი და მასალა.</div>
-        <div class="svc-price" id="svc_1_price">საწყისი $45,000-დან</div><br>
-        <a href="#calculator" class="svc-lnk">დეტალები →</a>
+        <div class="svc-desc" id="svc_1_desc">გეგმიდან გასაღებამდე, 80–500 კვ.მ.</div>
+        <div class="svc-price" id="svc_1_price">საწყისი $45,000-დან</div>
       </div>
       <div class="svc-card fi">
-        <div class="svc-icon">🏢</div>
-        <div class="svc-title" id="svc_2_title">კომერციული</div>
-        <div class="svc-desc" id="svc_2_desc">ოფისი, სავაჭრო სივრცე, სასტუმრო. ინდივიდუალური პროექტი.</div>
-        <div class="svc-price" id="svc_2_price">საწყისი $80,000-დან</div><br>
-        <a href="#calculator" class="svc-lnk">დეტალები →</a>
-      </div>
-      <div class="svc-card fi">
-        <div class="svc-icon">🔨</div>
-        <div class="svc-title" id="svc_3_title">რემონტი</div>
-        <div class="svc-desc" id="svc_3_desc">სრული რეკონსტრუქცია. Before/After გარანტია. ნებისმიერი ობიექტი.</div>
-        <div class="svc-price" id="svc_3_price">საწყისი $15,000-დან</div><br>
-        <a href="#calculator" class="svc-lnk">დეტალები →</a>
-      </div>
-      <div class="svc-card fi">
-        <div class="svc-icon">📋</div>
-        <div class="svc-title" id="svc_4_title">კონსულტაცია</div>
-        <div class="svc-desc" id="svc_4_desc">ინდივიდუალური პროექტი, ზედამხედველობა, ტექნიკური დახმარება.</div>
-        <div class="svc-price" id="svc_4_price">უფასო პირველი შეხვედრა</div><br>
-        <a href="#cta" class="svc-lnk">დეტალები →</a>
+        <div class="svc-title" id="svc_2_title">რემონტი</div>
+        <div class="svc-desc" id="svc_2_desc">სრული რეკონსტრუქცია გარანტიით.</div>
+        <div class="svc-price" id="svc_2_price">საწყისი $15,000-დან</div>
       </div>
     </div>
   </div>
@@ -573,149 +236,55 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
     <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="port_lbl">პორტფოლიო</span></div>
     <h2 class="sec-h2 fi" id="port_h2">განხორციელებული პროექტები</h2>
     <div class="filters fi">
-      <button class="fbtn active" data-f="all" id="filter_all">ყველა</button>
-      <button class="fbtn" data-f="house" id="filter_house">კერძო სახლი</button>
-      <button class="fbtn" data-f="comm" id="filter_comm">კომერციული</button>
-      <button class="fbtn" data-f="ren" id="filter_ren">რემონტი</button>
+      <button class="fbtn active" data-f="all"><span id="filter_all">ყველა</span></button>
+      <button class="fbtn" data-f="house"><span id="filter_house">კერძო სახლი</span></button>
+      <button class="fbtn" data-f="ren"><span id="filter_ren">რემონტი</span></button>
     </div>
     <div class="port-grid">
-      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო</div><div class="proj-info"><span class="proj-tag">კერძო სახლი</span><div class="proj-name" id="port_name_1">ვილა ვაშლიჯვარში</div><div class="proj-specs" id="port_specs_1">240 კვ.მ · 14 თვე · 2024</div></div></div>
-      <div class="proj fi" data-cat="comm"><div class="proj-img">ფოტო</div><div class="proj-info"><span class="proj-tag">კომერციული</span><div class="proj-name" id="port_name_2">ოფისი გლდანში</div><div class="proj-specs" id="port_specs_2">580 კვ.მ · 8 თვე · 2024</div></div></div>
-      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო</div><div class="proj-info"><span class="proj-tag">კერძო სახლი</span><div class="proj-name" id="port_name_3">სახლი მცხეთაში</div><div class="proj-specs" id="port_specs_3">180 კვ.მ · 11 თვე · 2023</div></div></div>
+      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო</div><div class="proj-info"><div class="proj-name" id="port_name_1">ვილა ვაშლიჯვარში</div><div class="proj-specs" id="port_specs_1">240 კვ.მ · 2024</div></div></div>
     </div>
   </div>
 </section>
 
-<section id="process" style="background:var(--card)">
+<section id="calculator">
   <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="proc_lbl">პროცესი</span></div>
-    <h2 class="sec-h2 fi" id="proc_h2">როგორ ვმუშაობთ</h2>
-    <div class="proc-grid fi">
-      <div class="step"><div class="step-n">01</div><div><div class="step-title" id="step_1_title">უფასო კონსულტაცია</div><div class="step-desc" id="step_1_desc">ადგილზე ან ზუმზე, 60 წუთი. პირველადი შეფასება.</div><span class="step-badge" id="step_1_badge">0₾ · 1–2 სამ. დღე</span></div></div>
-      <div class="step"><div class="step-n">02</div><div><div class="step-title" id="step_2_title">პროექტი და სმეტა</div><div class="step-desc" id="step_2_desc">არქ. გეგმა, ფასების ჩაშლა, ვადების გრაფიკი.</div><span class="step-badge" id="step_2_badge">2–4 კვირა</span></div></div>
-      <div class="step"><div class="step-n">03</div><div><div class="step-title" id="step_3_title">მშენებლობა</div><div class="step-desc" id="step_3_desc">ყოველკვირეული ფოტო-ანგარიში Telegram-ში.</div><span class="step-badge" id="step_3_badge">ხელშეკრ. მიხ.</span></div></div>
-      <div class="step"><div class="step-n">04</div><div><div class="step-title" id="step_4_title">ჩაბარება + გარანტია</div><div class="step-desc" id="step_4_desc">ტექ. ჩაბარება, სრული დოკ-ცია, 5წ გარანტიის ბარათი.</div><span class="step-badge" id="step_4_badge">5 წლიანი გარ.</span></div></div>
-    </div>
-    <div class="proc-callout fi"><span>📱</span><span id="proc_callout_txt">ყოველ კვირა Telegram-ში გიგზავნით ფოტო-ანგარიშს — სამშენებლო პროგრესი თქვენს ხელის გულზე</span></div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="testi_lbl">შეფასებები</span></div>
-    <h2 class="sec-h2 fi" id="testi_h2">კლიენტები ამბობენ</h2>
-    <div class="testi-grid">
-      <div class="tc fi"><div class="tc-head"><div class="tc-av">მკ</div><div><div class="tc-name" id="testi_name_1">მარიამ კ.</div><div class="tc-proj" id="testi_proj_1">ვილა ვაშლიჯვარში</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q" id="testi_q_1">"BuildiX-მა ზუსტად ვადაში ჩააბარა. ყოველ კვირა გვიგზავნიდა ფოტოებს — ნამდვილი პროფესიონალები."</p></div>
-      <div class="tc fi"><div class="tc-head"><div class="tc-av">გა</div><div><div class="tc-name" id="testi_name_2">გიორგი ა.</div><div class="tc-proj" id="testi_proj_2">ოფისი გლდანში</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q" id="testi_q_2">"580 კვ.მ ოფისი 8 თვეში — BuildiX-მა არა მარტო ვადა დაიცვა, ბიუჯეტიც არ გადაუსვლია."</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="calculator" style="background:var(--card)">
-  <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">კალკულატორი</span></div>
     <div class="calc-card fi">
-      <div class="calc-title" id="calc_title">სავარაუდო ბიუჯეტის კალკულატორი</div>
-      <div class="calc-sub" id="calc_sub">შეიყვანეთ პარამეტრები — შედეგი მყისიერია</div>
+      <div class="calc-title" id="calc_title">ბიუჯეტის კალკულატორი</div>
       <div class="calc-g">
-        <div>
-          <div class="cf"><label id="calc_label_area">ფართობი (კვ.მ)</label><input type="number" id="cA" min="1" placeholder="მაგ: 150" oninput="doCalc()"></div>
-          <div class="cf"><label id="calc_label_floors">სართულები</label><select id="cF" onchange="doCalc()"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
-          <div class="cf"><label id="calc_label_roof">სახურავი</label><select id="cR" onchange="doCalc()"><option value="tin">თუნუქი (Classic)</option><option value="flat">ბრტყელი გადახურვა</option></select></div>
-        </div>
-        <div>
-          <div class="cf"><label id="calc_label_concrete">ბეტონის მარკა</label><select><option>B20 (M250)</option><option>B25 (M350)</option></select></div>
-          <div class="cf"><label id="calc_label_wall">კედლის მასალა</label><select id="cW" onchange="doCalc()"><option value="pemza">პემზის ბლოკი</option><option value="aguri">აგური</option><option value="gazbloki">გაზბლოკი</option></select></div>
-          <div class="cf"><label id="calc_label_window">ფანჯარა</label><select id="cWi" onchange="doCalc()"><option value="std">სტანდარტული</option><option value="prem">პრემიუმ ალუმინი</option></select></div>
-        </div>
+        <div class="cf"><label id="calc_label_area">ფართობი (კვ.მ)</label><input type="number" id="cA" placeholder="მაგ: 150" oninput="doCalc()"></div>
+        <div class="cf"><label id="calc_label_floors">სართულები</label><select id="cF" onchange="doCalc()"><option value="1">1</option><option value="2">2</option></select></div>
       </div>
       <div class="calc-res" id="cr">
-        <div class="r-lbl">სავარაუდო ბიუჯეტი</div>
         <div class="r-amt"><span class="r-cur">$</span><span id="rT">0</span></div>
       </div>
-      <div class="calc-note"><span style="opacity:.4;flex-shrink:0">ℹ</span><span id="calc_note_txt">შეფასება სავარაუდოა. ჩვენი სპეციალისტი დაგიკავშირდებათ დეტალური კონსულტაციისთვის.</span></div>
-      <div class="calc-cta">
-        <input type="email" placeholder="თქვენი Email" id="calc_email_input">
-        <button class="btn-gold" id="calc_send_btn" onclick="alert('გმადლობთ!')">გამოგვიგზავნე</button>
-      </div>
-      <div class="calc-hint" id="calc_hint">24 სთ-ში სრული შეფასება მოგივა ელ-ფოსტაზე</div>
     </div>
   </div>
 </section>
 
 <section id="faq">
   <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">FAQ</span></div>
     <h2 class="sec-h2 fi" id="faq_h2">ხშირად დასმული კითხვები</h2>
     <div class="faq-wrap fi">
-      <div class="faq-item on"><button class="faq-q" onclick="faq(this)"><span id="faq_q1">როგორია გადახდის გრაფიკი?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a1">სტანდარტული სქემა: 30% ხელშეკრულების გაფორმებისას...</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span id="faq_q2">რამდენ ხანს გრძელდება მშენებლობა?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a2">80–150 კვ.მ სახლი — 8–12 თვე...</div></div>
+      <div class="faq-item on"><button class="faq-q" onclick="faq(this)"><span id="faq_q1">გადახდის გრაფიკი?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a1">სტანდარტული: 30/40/30.</div></div>
     </div>
   </div>
 </section>
-
-<section id="cta">
-  <div class="wrap">
-    <div class="cta-head fi">
-      <h2 class="cta-h2" id="cta_h2">მზად ხარ დაიწყო?</h2>
-      <p class="cta-sub" id="cta_sub">პირველი ნაბიჯი უფასოა — კონსულტაცია ადგილზე ან ზუმზე</p>
-    </div>
-    <div class="cta-grid">
-      <div class="cta-form fi">
-        <h3 id="cta_form_title">დაგვიკავშირდით</h3>
-        <div class="cf"><label id="cta_label_name">სახელი, გვარი</label><input type="text" id="ctaN" placeholder="ლაშა ჯაკობია"></div>
-        <div class="cf"><label id="cta_label_phone">ტელეფონი</label><input type="tel" id="ctaP" placeholder="+995 5XX XXX XXX"></div>
-        <button class="btn-gold" onclick="ctaSend()" style="width:100%" id="cta_send_btn">გამომიგზავნეთ →</button>
-      </div>
-      <div class="cta-side fi">
-        <a href="#" class="wa-btn" id="wa_btn_txt"><span>💬</span> WhatsApp · 15 წუთში გიპასუხებთ</a>
-        <div class="cta-phone" id="cta_phone_val">+995 XXX XX XX XX</div>
-        <div class="cta-addr" id="cta_addr_val">📍 თბილისი, [მისამართი]<br>ორშ–პარ 10:00–18:00</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="foot-grid">
-    <div>
-      <div class="foot-logo"><img src="https://raw.githubusercontent.com/Sandmercury/BuildX-V3/main/BuildiX-logo.png" alt="BuildiX"></div>
-      <div class="foot-tag" id="foot_tag">Smart Construction · 2013 წლიდან</div>
-    </div>
-    <div class="foot-col">
-      <h4 id="foot_nav_h">ნავიგაცია</h4>
-      <ul class="foot-links">
-        <li><a href="#portfolio">პროექტები</a></li>
-        <li><a href="#services">სერვისები</a></li>
-        <li><a href="#calculator">კალკულატორი</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
 
 <script>
-// NAV & UI FUNCTIONS
-function toggleNav(){document.getElementById('nm').classList.toggle('on');}
-function closeNav(){document.getElementById('nm').classList.remove('on');}
+// --- UI ფუნქციები ---
 function faq(btn){const item=btn.closest('.faq-item'); const was=item.classList.contains('on'); document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('on')); if(!was) item.classList.add('on');}
-function ctaSend(){const n=document.getElementById('ctaN').value.trim(); if(n) alert('✓ მადლობა!');}
-
-// CALCULATOR LOGIC
-function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
 function doCalc(){
   const area=parseFloat(document.getElementById('cA').value);
   const res=document.getElementById('cr');
   if(!area||area<=0){res.classList.remove('on');return;}
-  let pc=280;
-  if(parseInt(document.getElementById('cF').value)>1) pc=Math.floor(pc*1.15);
-  const total = area * pc;
-  document.getElementById('rT').textContent=Math.round(total).toLocaleString('en-US');
+  let pc=280; if(document.getElementById('cF').value==='2') pc=320;
+  document.getElementById('rT').textContent=Math.round(area*pc).toLocaleString();
   res.classList.add('on');
 }
 
-// GOOGLE SHEETS SYNC (განახლებული მძიმეების მხარდაჭერით)
+// --- Google Sheets Sync ---
 async function updateContent() {
-  // შენი CSV ბმული + დროის შტამპი ქეშის ასარიდებლად
+  // !!! ჩასვი შენი CSV ბმული აქ !!!
   const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmNsvD81ii-40OQgd-s2YthNCO3Yx0BoFPcjtmUIsVnLX2w5ONXNmrioYCx42tMeHuuTQArqQ3Hoz1/pub?gid=995882120&single=true&output=csv&t=' + new Date().getTime(); 
   
   try {
@@ -723,41 +292,44 @@ async function updateContent() {
     const data = await response.text();
     const rows = data.split(/\r?\n/).slice(1);
 
-    console.log("ცხრილიდან წამოღებული სტრიქონები:", rows);
-
     rows.forEach(row => {
-      // დაყოფა მძიმეებით (უფრო საიმედო მეთოდი)
       const match = row.match(/(".*?"|[^,]+)(?=\s*,|\s*$)/g);
-      
       if (match && match.length >= 2) {
         const id = match[0].replace(/^"|"$/g, '').trim();
         const content = match[1].replace(/^"|"$/g, '').trim();
-        
-        console.log(`ვცდილობ შევცვალო: ${id} -> ${content}`);
-        
         const el = document.getElementById(id);
         if (el) {
-          // \n-ის ჩანაცვლება <br>-ით
-          el.innerHTML = content.replace(/\\n/g, '<br>');
-        } else {
-          console.warn(`ელემენტი ID-ით "${id}" საიტზე ვერ მოიძებნა!`);
+          if (id.includes('_n') && content.includes('+')) {
+              el.innerHTML = `${content.replace('+', '')}<span>+</span>`;
+          } else {
+              el.innerHTML = content.replace(/\\n/g, '<br>');
+          }
         }
       }
     });
-  } catch (err) { 
-    console.error("Sync Error:", err); 
-  }
+  } catch (err) { console.error("Sync Error:", err); }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  updateContent();
+window.addEventListener('DOMContentLoaded', async () => {
+  await updateContent();
   
-  // FADE IN OBSERVER
-  document.querySelectorAll('.fi').forEach(el=>{
-    new IntersectionObserver(entries=>{
-      if(entries[0].isIntersecting) entries[0].target.classList.add('on');
-    },{threshold:0.1}).observe(el);
+  // ფილტრების ლოგიკა (თექსტების ჩატვირთვის მერე)
+  document.querySelectorAll('.fbtn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.fbtn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const f = b.getAttribute('data-f');
+      document.querySelectorAll('.proj').forEach(p => {
+        p.classList.toggle('hidden', f !== 'all' && p.getAttribute('data-cat') !== f);
+      });
+    });
   });
+
+  // Fade-in ანიმაცია
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fi').forEach(el => observer.observe(el));
 });
 </script>
 </body>
