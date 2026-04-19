@@ -480,7 +480,6 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
     <img src="https://raw.githubusercontent.com/Sandmercury/BuildX-V3/main/BuildiX-logo.png" alt="BuildiX">
@@ -492,7 +491,7 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
     <li><a href="#about">ჩვენ შესახებ</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="#cta" class="nav-cta">უფასო კონსულტაცია</a>
+  <a href="#cta" class="nav-cta" id="nav_cta">უფასო კონსულტაცია</a>
   <div class="nav-burger" id="burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile" id="nm">
@@ -504,350 +503,248 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
   <a href="#cta" onclick="closeNav()">უფასო კონსულტაცია →</a>
 </div>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-content fi">
-    <div class="hero-eye">სამშენებლო კომპანია · 2013 წლიდან</div>
-    <h1 class="hero-h1">ვაშენებთ სახლებს,<br>რომელშიც 50 წელი იცხოვრებ</h1>
-    <p class="hero-sub">თბილისი, მცხეთა, თეთრიწყარო — პროექტიდან გასაღებამდე</p>
+    <div class="hero-eye" id="hero_label">სამშენებლო კომპანია · 2013 წლიდან</div>
+    <h1 class="hero-h1" id="hero_h1">ვაშენებთ სახლებს,<br>რომელშიც 50 წელი იცხოვრებ</h1>
+    <p class="hero-sub" id="hero_sub">თბილისი, მცხეთა, თეთრიწყარო — პროექტიდან გასაღებამდე</p>
     <div class="hero-btns">
-      <a href="#calculator" class="btn-primary">ფასის გამოთვლა →</a>
-      <a href="#portfolio" class="btn-outline">პროექტები ნახვა</a>
+      <a href="#calculator" class="btn-primary" id="btn_calc">ფასის გამოთვლა →</a>
+      <a href="#portfolio" class="btn-outline" id="btn_port">პროექტები ნახვა</a>
     </div>
   </div>
   <div class="hero-proof">
-    <span class="hero-proof-item"><b>★ 4.9</b> · 87 შეფასება Google-ზე</span>
-    <span class="hero-proof-item"><b>200+</b> დასრულებული პროექტი</span>
-    <span class="hero-proof-item"><b>5 წლიანი</b> გარანტია</span>
+    <span class="hero-proof-item" id="hero_proof_1"><b>★ 4.9</b> · 87 შეფასება Google-ზე</span>
+    <span class="hero-proof-item" id="hero_proof_2"><b>200+</b> დასრულებული პროექტი</span>
+    <span class="hero-proof-item" id="hero_proof_3"><b>5 წლიანი</b> გარანტია</span>
   </div>
 </section>
 
-<!-- STATS -->
 <div id="stats">
   <div class="stats-grid">
-    <div class="stat fi"><div class="stat-n">200<span>+</span></div><div class="stat-l">დასრულებული პროექტი</div></div>
-    <div class="stat fi"><div class="stat-n">12<span> წ.</span></div><div class="stat-l">ბაზარზე</div></div>
-    <div class="stat fi"><div class="stat-n">5<span> წ.</span></div><div class="stat-l">გარანტია</div></div>
-    <div class="stat fi"><div class="stat-n">98<span>%</span></div><div class="stat-l">კმაყოფილი კლიენტი</div></div>
+    <div class="stat fi"><div class="stat-n" id="stat_projects_n">200<span>+</span></div><div class="stat-l" id="stat_projects_l">დასრულებული პროექტი</div></div>
+    <div class="stat fi"><div class="stat-n" id="stat_years_n">12<span> წ.</span></div><div class="stat-l" id="stat_years_l">ბაზარზე</div></div>
+    <div class="stat fi"><div class="stat-n" id="stat_warranty_n">5<span> წ.</span></div><div class="stat-l" id="stat_warranty_l">გარანტია</div></div>
+    <div class="stat fi"><div class="stat-n" id="stat_happy_n">98<span>%</span></div><div class="stat-l" id="stat_happy_l">კმაყოფილი კლიენტი</div></div>
   </div>
 </div>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">სერვისები</span></div>
-    <h2 class="sec-h2 fi">რას ვაშენებთ</h2>
+    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="svc_lbl">სერვისები</span></div>
+    <h2 class="sec-h2 fi" id="svc_h2">რას ვაშენებთ</h2>
     <div class="svc-grid">
       <div class="svc-card fi">
         <div class="svc-icon">🏠</div>
-        <div class="svc-title">კერძო სახლი</div>
-        <div class="svc-desc">გეგმიდან გასაღებამდე, 80–500 კვ.მ. ყველა სტილი და მასალა.</div>
-        <div class="svc-price">საწყისი $45,000-დან</div><br>
+        <div class="svc-title" id="svc_1_title">კერძო სახლი</div>
+        <div class="svc-desc" id="svc_1_desc">გეგმიდან გასაღებამდე, 80–500 კვ.მ. ყველა სტილი და მასალა.</div>
+        <div class="svc-price" id="svc_1_price">საწყისი $45,000-დან</div><br>
         <a href="#calculator" class="svc-lnk">დეტალები →</a>
       </div>
       <div class="svc-card fi">
         <div class="svc-icon">🏢</div>
-        <div class="svc-title">კომერციული</div>
-        <div class="svc-desc">ოფისი, სავაჭრო სივრცე, სასტუმრო. ინდივიდუალური პროექტი.</div>
-        <div class="svc-price">საწყისი $80,000-დან</div><br>
+        <div class="svc-title" id="svc_2_title">კომერციული</div>
+        <div class="svc-desc" id="svc_2_desc">ოფისი, სავაჭრო სივრცე, სასტუმრო. ინდივიდუალური პროექტი.</div>
+        <div class="svc-price" id="svc_2_price">საწყისი $80,000-დან</div><br>
         <a href="#calculator" class="svc-lnk">დეტალები →</a>
       </div>
       <div class="svc-card fi">
         <div class="svc-icon">🔨</div>
-        <div class="svc-title">რემონტი</div>
-        <div class="svc-desc">სრული რეკონსტრუქცია. Before/After გარანტია. ნებისმიერი ობიექტი.</div>
-        <div class="svc-price">საწყისი $15,000-დან</div><br>
+        <div class="svc-title" id="svc_3_title">რემონტი</div>
+        <div class="svc-desc" id="svc_3_desc">სრული რეკონსტრუქცია. Before/After გარანტია. ნებისმიერი ობიექტი.</div>
+        <div class="svc-price" id="svc_3_price">საწყისი $15,000-დან</div><br>
         <a href="#calculator" class="svc-lnk">დეტალები →</a>
       </div>
       <div class="svc-card fi">
         <div class="svc-icon">📋</div>
-        <div class="svc-title">კონსულტაცია</div>
-        <div class="svc-desc">ინდივიდუალური პროექტი, ზედამხედველობა, ტექნიკური დახმარება.</div>
-        <div class="svc-price">უფასო პირველი შეხვედრა</div><br>
+        <div class="svc-title" id="svc_4_title">კონსულტაცია</div>
+        <div class="svc-desc" id="svc_4_desc">ინდივიდუალური პროექტი, ზედამხედველობა, ტექნიკური დახმარება.</div>
+        <div class="svc-price" id="svc_4_price">უფასო პირველი შეხვედრა</div><br>
         <a href="#cta" class="svc-lnk">დეტალები →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">პორტფოლიო</span></div>
-    <h2 class="sec-h2 fi">განხორციელებული პროექტები</h2>
+    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="port_lbl">პორტფოლიო</span></div>
+    <h2 class="sec-h2 fi" id="port_h2">განხორციელებული პროექტები</h2>
     <div class="filters fi">
-      <button class="fbtn active" data-f="all">ყველა</button>
-      <button class="fbtn" data-f="house">კერძო სახლი</button>
-      <button class="fbtn" data-f="comm">კომერციული</button>
-      <button class="fbtn" data-f="ren">რემონტი</button>
+      <button class="fbtn active" data-f="all" id="filter_all">ყველა</button>
+      <button class="fbtn" data-f="house" id="filter_house">კერძო სახლი</button>
+      <button class="fbtn" data-f="comm" id="filter_comm">კომერციული</button>
+      <button class="fbtn" data-f="ren" id="filter_ren">რემონტი</button>
     </div>
     <div class="port-grid">
-      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო: ვილა ვაშლიჯვარში</div><div class="proj-info"><span class="proj-tag">კერძო სახლი</span><div class="proj-name">ვილა ვაშლიჯვარში</div><div class="proj-specs">240 კვ.მ · 14 თვე · 2024</div></div></div>
-      <div class="proj fi" data-cat="comm"><div class="proj-img">ფოტო: ოფისი გლდანში</div><div class="proj-info"><span class="proj-tag">კომერციული</span><div class="proj-name">ოფისი გლდანში</div><div class="proj-specs">580 კვ.მ · 8 თვე · 2024</div></div></div>
-      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო: სახლი მცხეთაში</div><div class="proj-info"><span class="proj-tag">კერძო სახლი</span><div class="proj-name">სახლი მცხეთაში</div><div class="proj-specs">180 კვ.მ · 11 თვე · 2023</div></div></div>
-      <div class="proj fi" data-cat="comm"><div class="proj-img">ფოტო: სავაჭრო სივრცე ვაკეში</div><div class="proj-info"><span class="proj-tag">კომერციული</span><div class="proj-name">სავაჭრო სივრცე ვაკეში</div><div class="proj-specs">320 კვ.მ · 6 თვე · 2023</div></div></div>
-      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო: კოტეჯი თეთრიწყაროში</div><div class="proj-info"><span class="proj-tag">კერძო სახლი</span><div class="proj-name">კოტეჯი თეთრიწყაროში</div><div class="proj-specs">120 კვ.მ · 9 თვე · 2023</div></div></div>
-      <div class="proj fi" data-cat="ren"><div class="proj-img">ფოტო: ბინის რემონტი ვარკეთილი</div><div class="proj-info"><span class="proj-tag">რემონტი</span><div class="proj-name">ბინის რემონტი ვარკეთილი</div><div class="proj-specs">95 კვ.მ · 3 თვე · 2024</div></div></div>
+      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო</div><div class="proj-info"><span class="proj-tag">კერძო სახლი</span><div class="proj-name" id="port_name_1">ვილა ვაშლიჯვარში</div><div class="proj-specs" id="port_specs_1">240 კვ.მ · 14 თვე · 2024</div></div></div>
+      <div class="proj fi" data-cat="comm"><div class="proj-img">ფოტო</div><div class="proj-info"><span class="proj-tag">კომერციული</span><div class="proj-name" id="port_name_2">ოფისი გლდანში</div><div class="proj-specs" id="port_specs_2">580 კვ.მ · 8 თვე · 2024</div></div></div>
+      <div class="proj fi" data-cat="house"><div class="proj-img">ფოტო</div><div class="proj-info"><span class="proj-tag">კერძო სახლი</span><div class="proj-name" id="port_name_3">სახლი მცხეთაში</div><div class="proj-specs" id="port_specs_3">180 კვ.მ · 11 თვე · 2023</div></div></div>
     </div>
-    <div class="center fi"><button class="btn-sm">ყველა პროექტის ნახვა →</button></div>
   </div>
 </section>
 
-<!-- PROCESS -->
 <section id="process" style="background:var(--card)">
   <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">პროცესი</span></div>
-    <h2 class="sec-h2 fi">როგორ ვმუშაობთ</h2>
+    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="proc_lbl">პროცესი</span></div>
+    <h2 class="sec-h2 fi" id="proc_h2">როგორ ვმუშაობთ</h2>
     <div class="proc-grid fi">
-      <div class="step"><div class="step-n">01</div><div><div class="step-title">უფასო კონსულტაცია</div><div class="step-desc">ადგილზე ან ზუმზე, 60 წუთი. პირველადი შეფასება.</div><span class="step-badge">0₾ · 1–2 სამ. დღე</span></div></div>
-      <div class="step"><div class="step-n">02</div><div><div class="step-title">პროექტი და სმეტა</div><div class="step-desc">არქ. გეგმა, ფასების ჩაშლა, ვადების გრაფიკი.</div><span class="step-badge">2–4 კვირა</span></div></div>
-      <div class="step"><div class="step-n">03</div><div><div class="step-title">მშენებლობა</div><div class="step-desc">ყოველკვირეული ფოტო-ანგარიში Telegram-ში.</div><span class="step-badge">ხელშეკრ. მიხ.</span></div></div>
-      <div class="step"><div class="step-n">04</div><div><div class="step-title">ჩაბარება + გარანტია</div><div class="step-desc">ტექ. ჩაბარება, სრული დოკ-ცია, 5წ გარანტიის ბარათი.</div><span class="step-badge">5 წლიანი გარ.</span></div></div>
+      <div class="step"><div class="step-n">01</div><div><div class="step-title" id="step_1_title">უფასო კონსულტაცია</div><div class="step-desc" id="step_1_desc">ადგილზე ან ზუმზე, 60 წუთი. პირველადი შეფასება.</div><span class="step-badge" id="step_1_badge">0₾ · 1–2 სამ. დღე</span></div></div>
+      <div class="step"><div class="step-n">02</div><div><div class="step-title" id="step_2_title">პროექტი და სმეტა</div><div class="step-desc" id="step_2_desc">არქ. გეგმა, ფასების ჩაშლა, ვადების გრაფიკი.</div><span class="step-badge" id="step_2_badge">2–4 კვირა</span></div></div>
+      <div class="step"><div class="step-n">03</div><div><div class="step-title" id="step_3_title">მშენებლობა</div><div class="step-desc" id="step_3_desc">ყოველკვირეული ფოტო-ანგარიში Telegram-ში.</div><span class="step-badge" id="step_3_badge">ხელშეკრ. მიხ.</span></div></div>
+      <div class="step"><div class="step-n">04</div><div><div class="step-title" id="step_4_title">ჩაბარება + გარანტია</div><div class="step-desc" id="step_4_desc">ტექ. ჩაბარება, სრული დოკ-ცია, 5წ გარანტიის ბარათი.</div><span class="step-badge" id="step_4_badge">5 წლიანი გარ.</span></div></div>
     </div>
-    <div class="proc-callout fi"><span>📱</span><span>ყოველ კვირა Telegram-ში გიგზავნით ფოტო-ანგარიშს — სამშენებლო პროგრესი თქვენს ხელის გულზე</span></div>
+    <div class="proc-callout fi"><span>📱</span><span id="proc_callout_txt">ყოველ კვირა Telegram-ში გიგზავნით ფოტო-ანგარიშს — სამშენებლო პროგრესი თქვენს ხელის გულზე</span></div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section id="about">
   <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">შეფასებები</span></div>
-    <h2 class="sec-h2 fi">კლიენტები ამბობენ</h2>
+    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl" id="testi_lbl">შეფასებები</span></div>
+    <h2 class="sec-h2 fi" id="testi_h2">კლიენტები ამბობენ</h2>
     <div class="testi-grid">
-      <div class="tc fi"><div class="tc-head"><div class="tc-av">მკ</div><div><div class="tc-name">მარიამ კ.</div><div class="tc-proj">ვილა ვაშლიჯვარში</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q">"BuildiX-მა ზუსტად ვადაში ჩააბარა. ყოველ კვირა გვიგზავნიდა ფოტოებს — ნამდვილი პროფესიონალები."</p><a href="#" class="tc-lnk">Google-ზე ნახვა →</a></div>
-      <div class="tc fi"><div class="tc-head"><div class="tc-av">გა</div><div><div class="tc-name">გიორგი ა.</div><div class="tc-proj">ოფისი გლდანში</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q">"580 კვ.მ ოფისი 8 თვეში — BuildiX-მა არა მარტო ვადა დაიცვა, ბიუჯეტიც არ გადაუსვლია."</p><a href="#" class="tc-lnk">Google-ზე ნახვა →</a></div>
-      <div class="tc fi"><div class="tc-head"><div class="tc-av">ნმ</div><div><div class="tc-name">ნინო მ.</div><div class="tc-proj">კოტეჯი თეთრიწყაროში</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q">"გარანტიის პერიოდში ერთი პატარა პრობლემა წამოიჭრა — მეორე დღეს უკვე იყვნენ. ეს არის სერვისი."</p><a href="#" class="tc-lnk">Google-ზე ნახვა →</a></div>
-    </div>
-    <div class="g-widget fi">
-      <div class="g-logo"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
-      <div class="g-rat"><span class="s">★★★★★</span>4.9</div>
-      <div class="g-cnt">87 შეფასება</div>
-      <a href="#" class="g-lnk">Maps-ზე ნახვა →</a>
+      <div class="tc fi"><div class="tc-head"><div class="tc-av">მკ</div><div><div class="tc-name" id="testi_name_1">მარიამ კ.</div><div class="tc-proj" id="testi_proj_1">ვილა ვაშლიჯვარში</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q" id="testi_q_1">"BuildiX-მა ზუსტად ვადაში ჩააბარა. ყოველ კვირა გვიგზავნიდა ფოტოებს — ნამდვილი პროფესიონალები."</p></div>
+      <div class="tc fi"><div class="tc-head"><div class="tc-av">გა</div><div><div class="tc-name" id="testi_name_2">გიორგი ა.</div><div class="tc-proj" id="testi_proj_2">ოფისი გლდანში</div><div class="tc-stars">★★★★★</div></div></div><p class="tc-q" id="testi_q_2">"580 კვ.მ ოფისი 8 თვეში — BuildiX-მა არა მარტო ვადა დაიცვა, ბიუჯეტიც არ გადაუსვლია."</p></div>
     </div>
   </div>
 </section>
 
-<!-- PARTNERS -->
-<section id="partners">
-  <div class="wrap">
-    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">პარტნიორები</span></div>
-    <h2 class="sec-h2 fi">ვენდობით საუკეთესოს</h2>
-    <div class="part-row fi">
-      <div class="part-logo">KNAUF</div><div class="part-logo">HILTI</div>
-      <div class="part-logo">ISOVER</div><div class="part-logo">MAPEI</div>
-      <div class="part-logo">TBC BANK</div><div class="part-logo">BOG</div>
-    </div>
-    <div class="trust-row fi">
-      <div class="tbadge"><span class="tbadge-icon">🏛</span><div class="tbadge-txt"><strong>სამინისტროს ლიცენზია</strong>№XXXXXX · <a href="#" style="color:var(--gold);font-size:11px">გადამოწმება →</a></div></div>
-      <div class="tbadge"><span class="tbadge-icon">✓</span><div class="tbadge-txt"><strong>ISO 9001 სერტიფიკატი</strong>ხარისხის მართვის სისტემა</div></div>
-      <div class="tbadge"><span class="tbadge-icon">🏦</span><div class="tbadge-txt"><strong>იპოთეკური პარტნიორი</strong>TBC Bank · საქართველოს ბანკი</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CALCULATOR -->
 <section id="calculator" style="background:var(--card)">
   <div class="wrap">
     <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">კალკულატორი</span></div>
     <div class="calc-card fi">
-      <div class="calc-title">სავარაუდო ბიუჯეტის კალკულატორი</div>
-      <div class="calc-sub">შეიყვანეთ პარამეტრები — შედეგი მყისიერია</div>
+      <div class="calc-title" id="calc_title">სავარაუდო ბიუჯეტის კალკულატორი</div>
+      <div class="calc-sub" id="calc_sub">შეიყვანეთ პარამეტრები — შედეგი მყისიერია</div>
       <div class="calc-g">
         <div>
-          <div class="cf"><label>ფართობი (კვ.მ)</label><input type="number" id="cA" min="1" placeholder="მაგ: 150" oninput="doCalc()"></div>
-          <div class="cf"><label>სართულები</label><select id="cF" onchange="doCalc()"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
-          <div class="cf"><label>სახურავი</label><select id="cR" onchange="doCalc()"><option value="tin">თუნუქი (Classic)</option><option value="flat">ბრტყელი გადახურვა</option></select></div>
+          <div class="cf"><label id="calc_label_area">ფართობი (კვ.მ)</label><input type="number" id="cA" min="1" placeholder="მაგ: 150" oninput="doCalc()"></div>
+          <div class="cf"><label id="calc_label_floors">სართულები</label><select id="cF" onchange="doCalc()"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+          <div class="cf"><label id="calc_label_roof">სახურავი</label><select id="cR" onchange="doCalc()"><option value="tin">თუნუქი (Classic)</option><option value="flat">ბრტყელი გადახურვა</option></select></div>
         </div>
         <div>
-          <div class="cf"><label>ბეტონის მარკა</label><select><option>B20 (M250)</option><option>B25 (M350)</option></select></div>
-          <div class="cf"><label>კედლის მასალა</label><select id="cW" onchange="doCalc()"><option value="pemza">პემზის ბლოკი</option><option value="aguri">აგური</option><option value="gazbloki">გაზბლოკი</option></select></div>
-          <div class="cf"><label>ფანჯარა</label><select id="cWi" onchange="doCalc()"><option value="std">სტანდარტული</option><option value="prem">პრემიუმ ალუმინი</option></select></div>
+          <div class="cf"><label id="calc_label_concrete">ბეტონის მარკა</label><select><option>B20 (M250)</option><option>B25 (M350)</option></select></div>
+          <div class="cf"><label id="calc_label_wall">კედლის მასალა</label><select id="cW" onchange="doCalc()"><option value="pemza">პემზის ბლოკი</option><option value="aguri">აგური</option><option value="gazbloki">გაზბლოკი</option></select></div>
+          <div class="cf"><label id="calc_label_window">ფანჯარა</label><select id="cWi" onchange="doCalc()"><option value="std">სტანდარტული</option><option value="prem">პრემიუმ ალუმინი</option></select></div>
         </div>
       </div>
       <div class="calc-res" id="cr">
         <div class="r-lbl">სავარაუდო ბიუჯეტი</div>
         <div class="r-amt"><span class="r-cur">$</span><span id="rT">0</span></div>
-        <div class="r-bkdn">
-          <div class="r-bi"><div class="r-bi-lbl">კონსტრუქცია</div><div class="r-bi-val" id="rCC">—</div></div>
-          <div class="r-bi"><div class="r-bi-lbl">გადახურვა</div><div class="r-bi-val" id="rCR">—</div></div>
-          <div class="r-bi"><div class="r-bi-lbl">ფასადი</div><div class="r-bi-val" id="rCF">—</div></div>
-          <div class="r-bi"><div class="r-bi-lbl">კომუნიკაციები</div><div class="r-bi-val" id="rCM">—</div></div>
-        </div>
       </div>
-      <div class="calc-note"><span style="opacity:.4;flex-shrink:0">ℹ</span><span>შეფასება სავარაუდოა. ჩვენი სპეციალისტი დაგიკავშირდებათ დეტალური კონსულტაციისთვის.</span></div>
+      <div class="calc-note"><span style="opacity:.4;flex-shrink:0">ℹ</span><span id="calc_note_txt">შეფასება სავარაუდოა. ჩვენი სპეციალისტი დაგიკავშირდებათ დეტალური კონსულტაციისთვის.</span></div>
       <div class="calc-cta">
-        <input type="email" placeholder="თქვენი Email">
-        <button class="btn-gold" onclick="alert('გმადლობთ! 24 სთ-ში შეფასება მოგივა.')">გამოგვიგზავნე</button>
+        <input type="email" placeholder="თქვენი Email" id="calc_email_input">
+        <button class="btn-gold" id="calc_send_btn" onclick="alert('გმადლობთ!')">გამოგვიგზავნე</button>
       </div>
-      <div class="calc-hint">24 სთ-ში სრული შეფასება მოგივა ელ-ფოსტაზე</div>
-      <div class="calc-full">
-        <p>გჭირდებათ დეტალური შეფასება საკონტაქტო ინფორმაციით?</p>
-        <a href="Calculator" class="btn-primary" style="display:inline-block">სრული კალკულატორი →</a>
-      </div>
+      <div class="calc-hint" id="calc_hint">24 სთ-ში სრული შეფასება მოგივა ელ-ფოსტაზე</div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="wrap">
     <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">FAQ</span></div>
-    <h2 class="sec-h2 fi">ხშირად დასმული კითხვები</h2>
+    <h2 class="sec-h2 fi" id="faq_h2">ხშირად დასმული კითხვები</h2>
     <div class="faq-wrap fi">
-      <div class="faq-item on"><button class="faq-q" onclick="faq(this)"><span>როგორია გადახდის გრაფიკი?</span><span class="faq-ico">+</span></button><div class="faq-a">სტანდარტული სქემა: 30% ხელშეკრულების გაფორმებისას, 40% მშენებლობის მიმდინარეობისას, 30% ჩაბარებისას. ინდივიდუალური გრაფიკი შეთანხმებით.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span>რამდენ ხანს გრძელდება მშენებლობა?</span><span class="faq-ico">+</span></button><div class="faq-a">80–150 კვ.მ სახლი — 8–12 თვე. 150–300 კვ.მ — 12–18 თვე. კომერციული ობიექტი — ინდ. შეფასება. ვადის დარღვევაზე ხელშეკრულებაში ჯარიმა გვიწერია.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span>რა ფარავს 5 წლიანი გარანტია?</span><span class="faq-ico">+</span></button><div class="faq-a">კონსტრუქციული ელემენტები — 5 წელი. სამუშაოების ხარისხი — 2 წელი. მასალები — მწარმოებლის გარანტია (1–10 წელი).</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span>ნებართვებს ვინ ართმევს?</span><span class="faq-ico">+</span></button><div class="faq-a">BuildiX ართმევს ყველა საჭირო ნებართვას — სამშენებლო, გარემოსდაცვითი, ქალაქმშენებლობითი. ეს შედის საერთო სერვისში.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span>შეიძლება პროექტის შეცვლა მშენებლობის პროცესში?</span><span class="faq-ico">+</span></button><div class="faq-a">დიახ. ნებისმიერი ცვლილება ფორმდება დამატებითი ხელშეკრულებით, სადაც ზუსტად წერია ფასი და ვადის ცვლილება.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span>შეიძლება იპოთეკით მშენებლობა?</span><span class="faq-ico">+</span></button><div class="faq-a">დიახ. ვართ TBC Bank-ისა და საქართველოს ბანკის პარტნიორი. გეხმარებით იპოთეკის გაფორმებაში.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span>მასალებს ვინ ყიდულობს?</span><span class="faq-ico">+</span></button><div class="faq-a">ორი ვარიანტი: 1) BuildiX ყიდულობს ყველაფერს (ფასი შედის სმეტაში), 2) კლიენტი ყიდულობს — ჩვენ ვდგებით.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span>როგორ ვადევნებ თვალს პროგრესს?</span><span class="faq-ico">+</span></button><div class="faq-a">ყოველ კვირა Telegram-ში გიგზავნით ფოტო-ანგარიშს. ნებისმიერ დროს შეგიძლია ადგილზე ვიზიტი — წინასწარ შეთანხმებით.</div></div>
+      <div class="faq-item on"><button class="faq-q" onclick="faq(this)"><span id="faq_q1">როგორია გადახდის გრაფიკი?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a1">სტანდარტული სქემა: 30% ხელშეკრულების გაფორმებისას...</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)"><span id="faq_q2">რამდენ ხანს გრძელდება მშენებლობა?</span><span class="faq-ico">+</span></button><div class="faq-a" id="faq_a2">80–150 კვ.მ სახლი — 8–12 თვე...</div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section id="cta">
   <div class="wrap">
     <div class="cta-head fi">
-      <h2 class="cta-h2">მზად ხარ დაიწყო?</h2>
-      <p class="cta-sub">პირველი ნაბიჯი უფასოა — კონსულტაცია ადგილზე ან ზუმზე</p>
+      <h2 class="cta-h2" id="cta_h2">მზად ხარ დაიწყო?</h2>
+      <p class="cta-sub" id="cta_sub">პირველი ნაბიჯი უფასოა — კონსულტაცია ადგილზე ან ზუმზე</p>
     </div>
     <div class="cta-grid">
       <div class="cta-form fi">
-        <h3>დაგვიკავშირდით</h3>
-        <div class="cf"><label>სახელი, გვარი</label><input type="text" id="ctaN" placeholder="ლაშა ჯაკობია"></div>
-        <div class="cf"><label>ტელეფონი</label><input type="tel" id="ctaP" placeholder="+995 5XX XXX XXX"></div>
-        <div class="cf"><label>მაინტერესებს</label><select><option>კერძო სახლი</option><option>კომერციული</option><option>რემონტი</option><option>სხვა</option></select></div>
-        <button class="btn-gold" onclick="ctaSend()" style="width:100%;height:48px;margin-top:4px">გამომიგზავნეთ →</button>
-        <div class="cf-note">24 სთ-ში დაგიკავშირდებით</div>
-        <div class="cta-ok" id="ctaOk"></div>
+        <h3 id="cta_form_title">დაგვიკავშირდით</h3>
+        <div class="cf"><label id="cta_label_name">სახელი, გვარი</label><input type="text" id="ctaN" placeholder="ლაშა ჯაკობია"></div>
+        <div class="cf"><label id="cta_label_phone">ტელეფონი</label><input type="tel" id="ctaP" placeholder="+995 5XX XXX XXX"></div>
+        <button class="btn-gold" onclick="ctaSend()" style="width:100%" id="cta_send_btn">გამომიგზავნეთ →</button>
       </div>
       <div class="cta-side fi">
-        <a href="https://wa.me/995XXXXXXXXX" class="wa-btn" target="_blank"><span>💬</span> WhatsApp · 15 წუთში გიპასუხებთ</a>
-        <div class="cta-phone">+995 XXX XX XX XX</div>
-        <div class="cta-addr">📍 თბილისი, [მისამართი]<br>ორშ–პარ 10:00–18:00</div>
-        <a href="#" class="cta-map">რუკაზე ნახვა →</a>
+        <a href="#" class="wa-btn" id="wa_btn_txt"><span>💬</span> WhatsApp · 15 წუთში გიპასუხებთ</a>
+        <div class="cta-phone" id="cta_phone_val">+995 XXX XX XX XX</div>
+        <div class="cta-addr" id="cta_addr_val">📍 თბილისი, [მისამართი]<br>ორშ–პარ 10:00–18:00</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-grid">
     <div>
       <div class="foot-logo"><img src="https://raw.githubusercontent.com/Sandmercury/BuildX-V3/main/BuildiX-logo.png" alt="BuildiX"></div>
-      <div class="foot-tag">Smart Construction · 2013 წლიდან</div>
-      <div class="socials">
-        <a href="#" class="soc" aria-label="Facebook">f</a>
-        <a href="#" class="soc" aria-label="Instagram">✦</a>
-        <a href="#" class="soc" aria-label="YouTube">▶</a>
-      </div>
+      <div class="foot-tag" id="foot_tag">Smart Construction · 2013 წლიდან</div>
     </div>
     <div class="foot-col">
-      <h4>ნავიგაცია</h4>
+      <h4 id="foot_nav_h">ნავიგაცია</h4>
       <ul class="foot-links">
         <li><a href="#portfolio">პროექტები</a></li>
         <li><a href="#services">სერვისები</a></li>
         <li><a href="#calculator">კალკულატორი</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#cta">კონტაქტი</a></li>
       </ul>
     </div>
-    <div class="foot-col">
-      <h4>კონტაქტი</h4>
-      <div class="foot-info">
-        <div class="foot-info-item"><strong>ტელეფონი</strong>+995 XXX XX XX XX</div>
-        <div class="foot-info-item"><strong>Email</strong>info@buildix.ge</div>
-        <div class="foot-info-item"><strong>მისამართი</strong>თბილისი, [მისამართი]</div>
-      </div>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <span>© 2026 BuildiX Construction Company</span>
-    <span>ლიცენზია №XXXXXX · კონფიდენციალურობა</span>
   </div>
 </footer>
 
-<a href="https://wa.me/995XXXXXXXXX" class="wa-float" target="_blank" aria-label="WhatsApp">💬</a>
-
 <script>
-// NAV
+// NAV & UI FUNCTIONS
 function toggleNav(){document.getElementById('nm').classList.toggle('on');}
 function closeNav(){document.getElementById('nm').classList.remove('on');}
+function faq(btn){const item=btn.closest('.faq-item'); const was=item.classList.contains('on'); document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('on')); if(!was) item.classList.add('on');}
+function ctaSend(){const n=document.getElementById('ctaN').value.trim(); if(n) alert('✓ მადლობა!');}
 
-// Active nav link on scroll
-const secs = document.querySelectorAll('section[id]');
-const nls  = document.querySelectorAll('.nav-links a');
-new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) nls.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
-  });
-},{rootMargin:'-40% 0px -55% 0px'}).observe;
-secs.forEach(s=>new IntersectionObserver(entries=>{
-  if(entries[0].isIntersecting) nls.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+s.id));
-},{rootMargin:'-40% 0px -55% 0px'}).observe(s));
-
-// PORTFOLIO FILTER
-document.querySelectorAll('.fbtn').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    const f=b.dataset.f;
-    document.querySelectorAll('.proj').forEach(p=>{
-      p.classList.toggle('hidden',f!=='all'&&p.dataset.cat!==f);
-    });
-  });
-});
-
-// CALCULATOR
+// CALCULATOR LOGIC
 function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
 function doCalc(){
   const area=parseFloat(document.getElementById('cA').value);
   const res=document.getElementById('cr');
   if(!area||area<=0){res.classList.remove('on');return;}
-  let pc=280,pr=85,pf=120,pm=60;
+  let pc=280;
   if(parseInt(document.getElementById('cF').value)>1) pc=Math.floor(pc*1.15);
-  if(document.getElementById('cW').value==='aguri') pc+=45;
-  if(document.getElementById('cR').value==='flat')  pr=145;
-  if(document.getElementById('cWi').value==='prem') pf+=160;
-  const cc=area*pc,cr=area*pr,cf=area*pf,cm=area*pm;
-  document.getElementById('rT').textContent=Math.round(cc+cr+cf+cm).toLocaleString('en-US');
-  document.getElementById('rCC').textContent=fmt(cc);
-  document.getElementById('rCR').textContent=fmt(cr);
-  document.getElementById('rCF').textContent=fmt(cf);
-  document.getElementById('rCM').textContent=fmt(cm);
+  const total = area * pc;
+  document.getElementById('rT').textContent=Math.round(total).toLocaleString('en-US');
   res.classList.add('on');
 }
 
-// FAQ
-function faq(btn){
-  const item=btn.closest('.faq-item');
-  const was=item.classList.contains('on');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('on'));
-  if(!was) item.classList.add('on');
+// GOOGLE SHEETS SYNC
+async function updateContent() {
+  // !!! ჩასვი შენი CSV ბმული აქ !!!
+  const csvUrl = 'აქ_ჩასვი_შენი_გამოქვეყნებული_CSV_ბმული'; 
+  
+  try {
+    const response = await fetch(csvUrl);
+    const data = await response.text();
+    const rows = data.split('\n').slice(1);
+
+    rows.forEach(row => {
+      const match = row.match(/(".*?"|[^,]+)(?=\s*,|\s*$)/g);
+      if (match && match.length >= 2) {
+        const id = match[0].replace(/^"|"$/g, '').trim();
+        const content = match[1].replace(/^"|"$/g, '').trim();
+        const el = document.getElementById(id);
+        if (el) {
+          el.innerHTML = content.replace(/\\n/g, '<br>');
+        }
+      }
+    });
+  } catch (err) { console.error("Sync Error:", err); }
 }
 
-// CTA FORM
-function ctaSend(){
-  const n=document.getElementById('ctaN').value.trim();
-  if(!n){document.getElementById('ctaN').focus();return;}
-  const box=document.getElementById('ctaOk');
-  box.textContent='✓  მადლობა, '+n+'! 24 სთ-ში დაგიკავშირდებით.';
-  box.classList.add('on');
-}
-
-// FADE IN ON SCROLL
-new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');}});
-},{threshold:0.08}).observe;
-document.querySelectorAll('.fi').forEach(el=>{
-  new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){entries[0].target.classList.add('on');}
-  },{threshold:0.08}).observe(el);
+window.addEventListener('DOMContentLoaded', () => {
+  updateContent();
+  // FADE IN OBSERVER
+  document.querySelectorAll('.fi').forEach(el=>{
+    new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting) entries[0].target.classList.add('on');
+    },{threshold:0.1}).observe(el);
+  });
 });
 </script>
 </body>
