@@ -949,7 +949,7 @@ document.querySelectorAll('.fi').forEach(el=>{
   <script>
 function ctaSend() {
     // 1. აქ ჩასვი შენი Google Web App URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx8NtkjwqlS5cqdrMs816Izgy0SFuZCUTZ9lAdl_P2qTaTQhjI5m4PiV6_pD8MGgh9XMw/exec'; 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbybM5uKQz9q10UUcFF6S4x0Vyvx4q0O5xjXNdASFnJ3eUBrWI9t-VvrKm5eLeLRlr-WjA/exec'; 
     
     const btn = document.getElementById('ctaBtn');
     const okMsg = document.getElementById('ctaOk');
@@ -976,29 +976,20 @@ function ctaSend() {
     formData.append('message', interest); // ეს 'message' უნდა ემთხვეოდეს data.message-ს
 
     // 4. გაგზავნა
-    fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => {
-            // წარმატების შემთხვევაში
-            okMsg.style.display = "block";
-            btn.innerHTML = "გაგზავნილია ✓";
-            
-            // ველების გასუფთავება
-            document.getElementById('ctaN').value = "";
-            document.getElementById('ctaP').value = "";
-            
-            // 5 წამში შეტყობინების გაქრობა
-            setTimeout(() => { 
-                okMsg.style.display = "none";
-                btn.disabled = false;
-                btn.innerHTML = "გამომიგზავნეთ →";
-            }, 5000);
-        })
-        .catch(error => {
-            console.error('Error!', error.message);
-            alert("შეცდომაა. სცადეთ მოგვიანებით.");
-            btn.disabled = false;
-            btn.innerHTML = "გამომიგზავნეთ →";
-        });
+    fetch(scriptURL, { 
+    method: 'POST', 
+    body: new FormData(form),
+    mode: 'no-cors' // ეს ხაზი დაამატე - ის აიძულებს ბრაუზერს გაგზავნოს მონაცემები ნებისმიერ შემთხვევაში
+})
+.then(() => {
+    okMsg.style.display = "block";
+    btn.innerHTML = "გაგზავნილია ✓";
+    form.reset();
+})
+.catch(error => {
+    console.error('Error!', error.message);
+    alert("შეცდომაა. სცადეთ მოგვიანებით.");
+});
 }
 </script>
   
