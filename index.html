@@ -946,50 +946,64 @@ document.querySelectorAll('.fi').forEach(el=>{
 });
 </script>
 
-  <script>
+ <script>
 function ctaSend() {
-    // 1. აქ ჩასვი შენი Google Web App URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbybM5uKQz9q10UUcFF6S4x0Vyvx4q0O5xjXNdASFnJ3eUBrWI9t-VvrKm5eLeLRlr-WjA/exec'; 
+    const scriptURL = 'https://formspree.io/f/mgorlvgn'; 
     
     const btn = document.getElementById('ctaBtn');
     const okMsg = document.getElementById('ctaOk');
     
-    // 2. მონაცემების ამოღება ველებიდან
     const name = document.getElementById('ctaN').value;
     const phone = document.getElementById('ctaP').value;
+    // დარწმუნდი, რომ select-ს ნამდვილად აქვს id="ctaM"
     const interest = document.getElementById('ctaM').value;
 
-    // ვალიდაცია: თუ სახელი ან ნომერი ცარიელია, არ გააგზავნოს
     if (!name || !phone) {
         alert("გთხოვთ შეავსოთ სახელი და ტელეფონი");
         return;
     }
 
-    // ღილაკის დროებითი დაბლოკვა
     btn.disabled = true;
     btn.innerHTML = "იგზავნება...";
 
-    // 3. მონაცემების მომზადება გაგზავნისთვის
     const formData = new FormData();
-    formData.append('name', name);      // ეს 'name' უნდა ემთხვეოდეს Apps Script-ში data.name-ს
-    formData.append('phone', phone);    // ეს 'phone' უნდა ემთხვეოდეს data.phone-ს
-    formData.append('message', interest); // ეს 'message' უნდა ემთხვეოდეს data.message-ს
+    formData.append('სახელი', name);
+    formData.append('ტელეფონი', phone);
+    formData.append('ინტერესი', interest);
 
-    // 4. გაგზავნა
-    fetch(scriptURL, { 
-    method: 'POST', 
-    body: new FormData(form),
-    mode: 'no-cors' // ეს ხაზი დაამატე - ის აიძულებს ბრაუზერს გაგზავნოს მონაცემები ნებისმიერ შემთხვევაში
-})
-.then(() => {
-    okMsg.style.display = "block";
-    btn.innerHTML = "გაგზავნილია ✓";
-    form.reset();
-})
-.catch(error => {
-    console.error('Error!', error.message);
-    alert("შეცდომაა. სცადეთ მოგვიანებით.");
-});
+    fetch(scriptURL, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            okMsg.style.display = "block";
+            btn.innerHTML = "გაგზავნილია ✓";
+            
+            // ველების გასუფთავება
+            document.getElementById('ctaN').value = "";
+            document.getElementById('ctaP').value = "";
+            
+            setTimeout(() => { 
+                okMsg.style.display = "none";
+                btn.disabled = false;
+                btn.innerHTML = "გამომიგზავნეთ →";
+            }, 5000);
+        } else {
+            alert("შეცდომაა. სცადეთ მოგვიანებით.");
+            btn.disabled = false;
+            btn.innerHTML = "გამომიგზავნეთ →";
+        }
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert("შეცდომაა. სცადეთ მოგვიანებით.");
+        btn.disabled = false;
+        btn.innerHTML = "გამომიგზავნეთ →";
+    });
 }
 </script>
   
