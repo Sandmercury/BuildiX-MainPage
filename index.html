@@ -874,18 +874,13 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
 <a href="https://wa.me/995595070396" class="wa-float" target="_blank" aria-label="WhatsApp">💬</a>
 
 <script>
-// NAV
+// NAV & UI FUNCTIONS (დავტოვოთ რაც მუშაობს)
 function toggleNav(){document.getElementById('nm').classList.toggle('on');}
 function closeNav(){document.getElementById('nm').classList.remove('on');}
 
 // Active nav link on scroll
 const secs = document.querySelectorAll('section[id]');
-const nls  = document.querySelectorAll('.nav-links a');
-new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) nls.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
-  });
-},{rootMargin:'-40% 0px -55% 0px'}).observe;
+const nls = document.querySelectorAll('.nav-links a');
 secs.forEach(s=>new IntersectionObserver(entries=>{
   if(entries[0].isIntersecting) nls.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+s.id));
 },{rootMargin:'-40% 0px -55% 0px'}).observe(s));
@@ -930,26 +925,70 @@ function faq(btn){
   if(!was) item.classList.add('on');
 }
 
-// CTA FORM
-function ctaSend(){
-  const n=document.getElementById('ctaN').value.trim();
-  if(!n){document.getElementById('ctaN').focus();return;}
-  const box=document.getElementById('ctaOk');
-  box.textContent='✓  მადლობა, '+n+'! 24 სთ-ში დაგიკავშირდებით.';
-  box.classList.add('on');
+// --- აქ იწყება ახალი GOOGLE SHEETS CTA ფუნქცია ---
+function ctaSend() {
+    // 1. ჩასვი შენი Google Apps Script-ის URL, რომელიც Deploy-ს შემდეგ მიიღე
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz8DUztJInskTwz4j84W8byo6Atn4M8wRn36aYZL7aH05Gpk3KqjaJVR59NzR-ze8U/exec'; 
+    
+    const btn = document.getElementById('ctaBtn');
+    const okMsg = document.getElementById('ctaOk');
+
+    const name = document.getElementById('ctaN').value;
+    const phone = document.getElementById('ctaP').value;
+    const interest = document.getElementById('ctaM').value;
+
+    if (!name || !phone) {
+        alert("გთხოვთ შეავსოთ სახელი და ტელეფონი");
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = "იგზავნება...";
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('phone', phone);
+    formData.append('message', interest);
+
+    // mode: 'no-cors' უზრუნველყოფს, რომ Google-მა არ დაბლოკოს მოთხოვნა
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: formData, 
+        mode: 'no-cors' 
+    })
+    .then(() => {
+        // წარმატების შეტყობინება
+        okMsg.style.display = "block";
+        okMsg.innerHTML = "✅ მადლობა, " + name + "! შეტყობინება გაიგზავნა.";
+        btn.innerHTML = "გაგზავნილია ✓";
+        
+        // ველების გასუფთავება
+        document.getElementById('ctaN').value = "";
+        document.getElementById('ctaP').value = "";
+
+        setTimeout(() => { 
+            okMsg.style.display = "none";
+            btn.disabled = false;
+            btn.innerHTML = "გამომიგზავნეთ →";
+        }, 5000);
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert("შეცდომაა. სცადეთ მოგვიანებით.");
+        btn.disabled = false;
+        btn.innerHTML = "გამომიგზავნეთ →";
+    });
 }
+// --- აქ მთავრდება GOOGLE SHEETS ფუნქცია ---
 
 // FADE IN ON SCROLL
-new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');}});
-},{threshold:0.08}).observe;
 document.querySelectorAll('.fi').forEach(el=>{
   new IntersectionObserver(entries=>{
     if(entries[0].isIntersecting){entries[0].target.classList.add('on');}
   },{threshold:0.08}).observe(el);
 });
 </script>
-
+  
  <script>
 function ctaSend() {
     const scriptURL = 'https://formspree.io/f/mgorlvgn'; 
