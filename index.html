@@ -794,35 +794,29 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
     </div>
     <div class="cta-grid">
       <div class="cta-form fi">
-        <div class="cta-form fi">
-    <h3>დაგვიკავშირდით</h3>
-    <form action="https://formspree.io/f/mgorlvgn" method="POST">
-        <div class="cf">
+        <h3>დაგვიკავშირდით</h3>
+        <div id="contact-form">
+          <div class="cf">
             <label>სახელი, გვარი</label>
-            <input type="text" name="სახელი" placeholder="მაგ: ლაშა ჯაკობია" required>
-        </div>
-        <div class="cf">
+            <input type="text" id="ctaN" placeholder="მაგ: ლაშა ჯაკობია">
+          </div>
+          <div class="cf">
             <label>ტელეფონი</label>
-            <input type="tel" name="ტელეფონი" placeholder="+995 5XX XXX XXX" required>
-        </div>
-        <div class="cf">
+            <input type="tel" id="ctaP" placeholder="+995 5XX XXX XXX">
+          </div>
+          <div class="cf">
             <label>მაინტერესებს</label>
-            <select name="ინტერესი">
-                <option>კერძო სახლი</option>
-                <option>კომერციული</option>
-                <option>რემონტი</option>
-                <option>სხვა</option>
+            <select id="ctaM">
+              <option>კერძო სახლი</option>
+              <option>კომერციული</option>
+              <option>რემონტი</option>
+              <option>სვა</option>
             </select>
+          </div>
+          <button type="button" id="ctaBtn" class="btn-gold" onclick="ctaSend()" style="width:100%;height:48px;margin-top:4px">გამომიგზავნეთ →</button>
         </div>
-        <button type="submit" class="btn-gold" style="width:100%;height:48px;margin-top:4px">გამომიგზავნეთ →</button>
+        <div id="ctaOk" style="display:none; color: #C8A96E; margin-top: 15px; text-align: center; font-weight: bold;"></div>
         <div class="cf-note">24 სთ-ში დაგიკავშირდებით</div>
-    </form>
-</div>
-    
-    <div id="ctaOk" style="display:none; color: #d4af37; margin-top: 10px; text-align: center; font-weight: bold;">✅ შეტყობინება გაიგზავნა!</div>
-</div>
-        <div class="cf-note">24 სთ-ში დაგიკავშირდებით</div>
-        <div class="cta-ok" id="ctaOk"></div>
       </div>
       <div class="cta-side fi">
         <a href="https://wa.me/995595070396" class="wa-btn" target="_blank"><span>💬</span> WhatsApp · მალე გიპასუხებთ</a>
@@ -834,7 +828,6 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-grid">
     <div>
@@ -874,18 +867,15 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
 <a href="https://wa.me/995595070396" class="wa-float" target="_blank" aria-label="WhatsApp">💬</a>
 
 <script>
-// NAV & UI FUNCTIONS (დავტოვოთ რაც მუშაობს)
 function toggleNav(){document.getElementById('nm').classList.toggle('on');}
 function closeNav(){document.getElementById('nm').classList.remove('on');}
 
-// Active nav link on scroll
 const secs = document.querySelectorAll('section[id]');
 const nls = document.querySelectorAll('.nav-links a');
 secs.forEach(s=>new IntersectionObserver(entries=>{
   if(entries[0].isIntersecting) nls.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+s.id));
 },{rootMargin:'-40% 0px -55% 0px'}).observe(s));
 
-// PORTFOLIO FILTER
 document.querySelectorAll('.fbtn').forEach(b=>{
   b.addEventListener('click',()=>{
     document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));
@@ -897,7 +887,6 @@ document.querySelectorAll('.fbtn').forEach(b=>{
   });
 });
 
-// CALCULATOR
 function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
 function doCalc(){
   const area=parseFloat(document.getElementById('cA').value);
@@ -917,7 +906,6 @@ function doCalc(){
   res.classList.add('on');
 }
 
-// FAQ
 function faq(btn){
   const item=btn.closest('.faq-item');
   const was=item.classList.contains('on');
@@ -925,9 +913,9 @@ function faq(btn){
   if(!was) item.classList.add('on');
 }
 
-// --- აქ იწყება ახალი GOOGLE SHEETS CTA ფუნქცია ---
+// GOOGLE SHEETS SEND (საბოლოო ვერსია)
 function ctaSend() {
-    // 1. ჩასვი შენი Google Apps Script-ის URL, რომელიც Deploy-ს შემდეგ მიიღე
+    // ჩასვი შენი Google URL აქ:
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz8DUztJInskTwz4j84W8byo6Atn4M8wRn36aYZL7aH05Gpk3KqjaJVR59NzR-ze8U/exec'; 
     
     const btn = document.getElementById('ctaBtn');
@@ -950,19 +938,12 @@ function ctaSend() {
     formData.append('phone', phone);
     formData.append('message', interest);
 
-    // mode: 'no-cors' უზრუნველყოფს, რომ Google-მა არ დაბლოკოს მოთხოვნა
-    fetch(scriptURL, { 
-        method: 'POST', 
-        body: formData, 
-        mode: 'no-cors' 
-    })
+    fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
     .then(() => {
-        // წარმატების შეტყობინება
         okMsg.style.display = "block";
         okMsg.innerHTML = "✅ მადლობა, " + name + "! შეტყობინება გაიგზავნა.";
         btn.innerHTML = "გაგზავნილია ✓";
         
-        // ველების გასუფთავება
         document.getElementById('ctaN').value = "";
         document.getElementById('ctaP').value = "";
 
@@ -974,81 +955,16 @@ function ctaSend() {
     })
     .catch(error => {
         console.error('Error!', error.message);
-        alert("შეცდომაა. სცადეთ მოგვიანებით.");
         btn.disabled = false;
         btn.innerHTML = "გამომიგზავნეთ →";
     });
 }
-// --- აქ მთავრდება GOOGLE SHEETS ფუნქცია ---
 
-// FADE IN ON SCROLL
 document.querySelectorAll('.fi').forEach(el=>{
   new IntersectionObserver(entries=>{
     if(entries[0].isIntersecting){entries[0].target.classList.add('on');}
   },{threshold:0.08}).observe(el);
 });
 </script>
-  
- <script>
-function ctaSend() {
-    const scriptURL = 'https://formspree.io/f/mgorlvgn'; 
-    
-    const btn = document.getElementById('ctaBtn');
-    const okMsg = document.getElementById('ctaOk');
-    
-    const name = document.getElementById('ctaN').value;
-    const phone = document.getElementById('ctaP').value;
-    // დარწმუნდი, რომ select-ს ნამდვილად აქვს id="ctaM"
-    const interest = document.getElementById('ctaM').value;
-
-    if (!name || !phone) {
-        alert("გთხოვთ შეავსოთ სახელი და ტელეფონი");
-        return;
-    }
-
-    btn.disabled = true;
-    btn.innerHTML = "იგზავნება...";
-
-    const formData = new FormData();
-    formData.append('სახელი', name);
-    formData.append('ტელეფონი', phone);
-    formData.append('ინტერესი', interest);
-
-    fetch(scriptURL, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            okMsg.style.display = "block";
-            btn.innerHTML = "გაგზავნილია ✓";
-            
-            // ველების გასუფთავება
-            document.getElementById('ctaN').value = "";
-            document.getElementById('ctaP').value = "";
-            
-            setTimeout(() => { 
-                okMsg.style.display = "none";
-                btn.disabled = false;
-                btn.innerHTML = "გამომიგზავნეთ →";
-            }, 5000);
-        } else {
-            alert("შეცდომაა. სცადეთ მოგვიანებით.");
-            btn.disabled = false;
-            btn.innerHTML = "გამომიგზავნეთ →";
-        }
-    })
-    .catch(error => {
-        console.error('Error!', error.message);
-        alert("შეცდომაა. სცადეთ მოგვიანებით.");
-        btn.disabled = false;
-        btn.innerHTML = "გამომიგზავნეთ →";
-    });
-}
-</script>
-  
 </body>
 </html>
