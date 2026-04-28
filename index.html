@@ -477,6 +477,55 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
   .hero-btns{flex-direction:column;align-items:center;}
   .hero-proof{gap:14px;}
 }
+
+/* ── VIDEO REVIEWS (აქ ჩააფეისთე) ── */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+.video-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.video-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+.video-card video {
+    width: 100%;
+    aspect-ratio: 9/16; 
+    object-fit: cover;
+    background: #000;
+}
+.video-info {
+    padding: 15px;
+    text-align: center;
+}
+.video-info h4 {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+.video-info p {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .video-grid { grid-template-columns: 1fr; }
+}
+
+/* ── RESPONSIVE FIX ── */
+@media(max-width:768px){
+  section{padding:72px 20px;}
+}
+  
 </style>
 </head>
 <body>
@@ -645,17 +694,6 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
 
       <div class="proj fi" data-cat="ren">
         <div class="proj-img">
-          <img src="Bina-Varketili.png" alt="ბინის რემონტი ვარკეთილი" style="width:100%; height:280px; object-fit:cover; display:block;">
-        </div>
-        <div class="proj-info">
-          <span class="proj-tag">რემონტი</span>
-          <div class="proj-name">ბინის რემონტი ვარკეთილი</div>
-          <div class="proj-specs">95 კვ.მ · 1 თვე · 2024</div>
-        </div>
-      </div>
-
-      <div class="proj fi" data-cat="ren">
-        <div class="proj-img">
           <img src="Saburtalo.png" alt="ბინის რემონტი საბურთალო" style="width:100%; height:280px; object-fit:cover; display:block;">
         </div>
         <div class="proj-info">
@@ -665,8 +703,49 @@ footer{background:#0D0D0B;border-top:1px solid var(--border);padding:52px 40px 0
         </div>
       </div>
 
-    </div> <div class="center fi">
-      <button class="btn-sm">ყველა პროექტის ნახვა →</button>
+  </div>
+</section>
+
+  <!-- Video Reviews --> 
+
+  <section id="video-reviews">
+  <div class="wrap">
+    <div class="sec-eye fi"><div class="sec-bar"></div><span class="sec-lbl">ვიდეო შეფასებები</span></div>
+    <h2 class="sec-h2 fi">ჩვენი კმაყოფილი მომხმარებლები</h2>
+    
+    <div class="video-grid">
+      <div class="video-card fi">
+        <video controls poster="thumb-maka.webp">
+          <source src="video-maka.mp4" type="video/mp4">
+          თქვენს ბრაუზერს არ აქვს ვიდეოს მხარდაჭერა.
+        </video>
+        <div class="video-info">
+          <h4>მაკა</h4>
+          <p>ვილა საგურამოში</p>
+        </div>
+      </div>
+
+      <div class="video-card fi">
+        <video controls poster="thumb-gocha.webp">
+          <source src="video-gocha.mp4" type="video/mp4">
+          თქვენს ბრაუზერს არ აქვს ვიდეოს მხარდაჭერა.
+        </video>
+        <div class="video-info">
+          <h4>გოჩა</h4>
+          <p>სახლი მუხათწყაროში</p>
+        </div>
+      </div>
+
+      <div class="video-card fi">
+        <video controls poster="thumb-saba.webp">
+          <source src="video-saba.mp4" type="video/mp4">
+          თქვენს ბრაუზერს არ აქვს ვიდეოს მხარდაჭერა.
+        </video>
+        <div class="video-info">
+          <h4>საბა</h4>
+          <p>სახლი ლისზე</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
